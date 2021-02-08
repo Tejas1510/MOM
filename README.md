@@ -28,8 +28,11 @@ Step 5: So our app will have 4 layering’s and will solve all the suggestions p
 ## Technology:
 
 • Frontend: React JS, Material UI, JavaScript, HTML, CSS
+
 • Backend: Django ( Python Framework)
+
 • Database: SQLite
+
 • Other Technologies: Machine Learning, NLTK Library
 
 ## Functional Specifications:
