@@ -1,4 +1,4 @@
-![Hacking-Scripts](https://socialify.git.ci/Tejas1510/MOM/image?description=1&forks=1&issues=1&language=1&owner=1&pulls=1&stargazers=1&theme=Dark)
+![Hacking-Scripts](https://socialify.git.ci/Tejas1510/MOM/image?description=1&descriptionEditable=MOM%20is%20a%20chrome%20extension%20to%20generate%20Minutes%20of%20Meeting&forks=1&issues=1&language=1&owner=1&pulls=1&stargazers=1&theme=Dark)
  
 ## 📌 Introduction
 
