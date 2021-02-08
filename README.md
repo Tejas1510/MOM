@@ -35,8 +35,12 @@ Step 5: So our app will have 4 layering’s and will solve all the suggestions p
 ## Functional Specifications:
 
 • Transcription of Meeting: Convert meeting into textual format
+
 • Summarization of Text: The entire meeting transcript is summarized to give well-documented MOM
+
 • Translation into multiple regional languages: Summarized text will be available in regional languages.
+
 • Text to Speech Conversion: Summarized text can be converted to audio, which will be helpful for
 visually challenged people.
+
 • Email Notifications: Send mail to the user with his/her MOM
