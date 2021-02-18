@@ -48,7 +48,7 @@ visually challenged people.
 
 • Email Notifications: Send mail to the user with his/her MOM
 
-## Our Team:
+## Our Team
 | S.No. | Name               | Role                      | GitHub Username                                      |
 | ----- | ------------------ | ------------------------- | ---------------------------------------------------- |
 | 1.    | Yash Agrawal       | Frontend Developer        |                                                      |
