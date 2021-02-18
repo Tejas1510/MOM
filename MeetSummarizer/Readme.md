@@ -1,3 +1,4 @@
+<img src = "https://github.com/Tejas1510/MOM/blob/main/Images_MOM/DR.jpeg"></img>
 # Django Project Setup/Run Details
 1. Install django by writing <b>pip install django</b> in terminal
 
