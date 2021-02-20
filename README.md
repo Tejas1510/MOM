@@ -48,6 +48,7 @@ visually challenged people.
 
 • Email Notifications: Send mail to the user with his/her MOM
 
+<<<<<<< HEAD
 
 # Project Directory Structure
 
@@ -55,6 +56,8 @@ visually challenged people.
 2. Summarizer: Django app ( for Summarization purpose)
 3. client: React App(Frontend)
 
+=======
+>>>>>>> 2fe624d2936be6fa6da0ede0304a76e12a88622b
 ## Our Team
 | S.No. | Name               | Role                      | GitHub Username                                      |
 | ----- | ------------------ | ------------------------- | ---------------------------------------------------- |
@@ -62,4 +65,8 @@ visually challenged people.
 | 2.    | Tejas Tapas        | UI Designer               |                                                      |
 | 3.    | Atul Thakre        | Backend Developer         |                                                      |
 | 4.    | Yash Telkhade      | Machine Learning Engineer |                                                      |
+<<<<<<< HEAD
 | 5.    | Ayush Kedia        | Machine Learning Engineer |                                                      |
+=======
+| 5.    | Ayush Kedia        | Machine Learning Engineer |                                                      |
+>>>>>>> 2fe624d2936be6fa6da0ede0304a76e12a88622b
