@@ -53,7 +53,7 @@ visually challenged people.
 
 1. MeetSummarizer: Project Name
 2. Summarizer: Django app ( for Summarization purpose)
-3. client: React App(Frontend)
+3. MOM_Frontend: React App(Frontend)
 
 ## Our Team
 | S.No. | Name                      | Role                      | GitHub Username                                      |
@@ -62,5 +62,4 @@ visually challenged people.
 | 2.    | Tejas Sudhir Tapas        | UI Designer               |                                                      |
 | 3.    | Atul Thakre               | Backend Developer         |                                                      |
 | 4.    | Yash Telkhade             | Machine Learning Engineer |                                                      |
-| 5.    | Ayush Kedia               | Machine Learning Engineer |                                                      |
 | 5.    | Ayush Kedia               | Machine Learning Engineer |                                                      |
