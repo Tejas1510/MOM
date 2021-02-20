@@ -1,0 +1,146 @@
+.Empasized{
+    color: deepskyblue;
+}
+.heading{
+    font-size: 20px;
+    font-family: 'Montserrat', serif;
+    font-weight: 800;
+}
+
+.headerContainer{
+    margin-top: 100px;
+}
+
+.startNow{
+    background-color: deepskyblue;
+    /* border: 1px solid #fff; */
+    /* border: 1.2px solid #fff; */
+    color: #fff;
+    padding: 15px 30px 15px 30px;
+    margin: 30px 0px 0px 0px;
+    width: 80%;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+}
+.startNow:hover{
+    background-color: white;
+    border: 1.2px solid deepskyblue;
+    color: deepskyblue;
+    text-decoration: none;
+}
+
+.pageWidth{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px 0 20px;
+}
+
+.feature{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: space-around;
+    align-items: center;
+    margin: 170px 0;
+}
+
+.zoomLogo{
+    vertical-align: middle;
+    width: 140px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.featureHeading{
+    font-size: 28px;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+}
+.featureImage{
+    margin-top: 30px;
+}
+
+.f1{
+    padding-bottom: 25px;
+}
+
+.video{
+    width: 100%;
+    height: 280px;
+    border: none;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.colaboration{
+    width: 100%;
+    margin: auto;
+    padding: 0 20px 0 20px;
+    background-color: #3d455c;
+    text-align: center;
+
+}
+
+.colaborationRow{
+        display: flex;
+        /* justify-content: space-between; */
+        justify-content: space-around;
+        align-items: center;
+        margin: 130px 0;
+}
+
+.colaborationHeading{
+    color: white;
+}
+
+.colaborationPara{
+    color:#d2cfce;
+    line-height: 150%;
+    padding: 0 0 10px;
+}
+
+.signup{
+    background-color: deeppink;
+    color: #fff;
+    padding: 15px 30px 15px 30px;
+    margin: 30px 0px 0px 0px;
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 170px;
+    font-weight: bold;
+}
+
+.signup:hover{
+    text-decoration: none;
+    color: deeppink;
+    background-color: white;
+    border: 1.2px solid deeppink;
+}
+
+.workFlowRow{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 150px 0;
+}
+
+.workFlowHead{
+    color: #3d455c;
+    text-align: center;
+    font-weight: bold;
+}
+
+.workFlowSubHead{
+    text-align: center;
+    font-weight: bold;
+}

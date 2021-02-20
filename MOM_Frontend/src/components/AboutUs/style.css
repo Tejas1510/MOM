@@ -1,0 +1,44 @@
+.aboutus{
+        width: 100%;
+        margin: auto;
+        padding: 0 30px 20px 30px;
+        background-color: #3d455c;
+        text-align: center;
+        margin-top: 71px;
+}
+h1{
+    font-size: 34px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Montserrat', serif;
+}
+
+p{
+    line-height: 150%;
+    padding: 0 0 10px;
+}
+.aboutUsHead{
+    text-align: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.aboutUsPara{
+    color:#d2cfce;
+}
+.aboutRow{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: space-around;
+    align-items: center;
+    margin: 130px 0;
+}
+
+.aboutHead1{
+    font-size: 28px;
+    font-family: 'Montserrat', serif;
+    font-weight: 800;
+}
+
+.aboutImage{
+    width: 80%;
+}
