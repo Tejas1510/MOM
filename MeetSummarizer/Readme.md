@@ -34,7 +34,3 @@ python manage.py createsuperuser
 ```
    username: Project2021
    password: Project@2021
-<<<<<<< HEAD
-
-=======
->>>>>>> 2fe624d2936be6fa6da0ede0304a76e12a88622b
