@@ -8,6 +8,14 @@ from django.shortcuts import get_object_or_404
 from Summarizer.models import MeetContent
 from .serializers import MeetContentSerializer
 
+# Social Login Imports
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from rest_auth.registration.views import SocialLoginView
+
+# Google Login API View
+class GoogleLogin(SocialLoginView):
+    adapter_class = GoogleOAuth2Adapter
+
 # class MeetContentListView(ListAPIView):
 #     queryset = MeetContent.objects.all()
 #     serializer_class = MeetContentSerializer

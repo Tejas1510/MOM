@@ -40,6 +40,18 @@ INSTALLED_APPS = [
     'Summarizer',
     'corsheaders',
     'rest_framework',
+
+    # For Rest Social Authentication
+    'rest_framework.authtoken',
+    'rest_auth',
+
+    #for social login
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -133,4 +145,6 @@ STATIC_URL = '/static/'
 #     ]
 # }
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True # To Receive API requests from servers
+
+SITE_ID = 1 # For Social Login
