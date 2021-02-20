@@ -47,3 +47,19 @@ Step 5: So our app will have 4 layering’s and will solve all the suggestions p
 visually challenged people.
 
 • Email Notifications: Send mail to the user with his/her MOM
+
+
+# Project Directory Structure
+
+1. MeetSummarizer: Project Name
+2. Summarizer: Django app ( for Summarization purpose)
+3. client: React App(Frontend)
+
+## Our Team
+| S.No. | Name               | Role                      | GitHub Username                                      |
+| ----- | ------------------ | ------------------------- | ---------------------------------------------------- |
+| 1.    | Yash Agrawal       | Frontend Developer        |                                                      |
+| 2.    | Tejas Tapas        | UI Designer               |                                                      |
+| 3.    | Atul Thakre        | Backend Developer         |                                                      |
+| 4.    | Yash Telkhade      | Machine Learning Engineer |                                                      |
+| 5.    | Ayush Kedia        | Machine Learning Engineer |                                                      |

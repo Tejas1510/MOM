@@ -1,20 +1,37 @@
+<img src = "https://github.com/Tejas1510/MOM/blob/main/Images_MOM/DR.jpeg"></img>
 # Django Project Setup/Run Details
-1. Install django by writing <b>pip install django</b> in terminal
-
-2. Make a folder and write <b>django-admin startproject <project_name></b>
-
-3. To check django version : python -m django --version
-
+1. Install django by writing below command in terminal
+```
+pip install django
+```
+2. Make a folder and write 
+```
+django-admin startproject <project_name>
+```
+3. To check django version : 
+```
+python -m django --version
+```
 4. Go to your project directory and then type: 
-   <b>python manage.py runserver</b>
+```
+python manage.py runserver
+```
 
 5. Make an app for making our project functional:
-   <b>python manage.py startapp <app_name></b>
+```
+python manage.py startapp <app_name>
+```
   
-6. To make some changes use commands(in sequence):
-   <b>python manage.py makemigrations</b>
-   <b>python manage.py migrate</b>
+6. To make some migartions in database use commands(in sequence):
+```
+python manage.py makemigrations
+python manage.py migrate
+```
 
-7. To create Admin: <b>python manage.py createsuperuser</b>
+7. To create Admin:
+```
+python manage.py createsuperuser
+```
    username: Project2021
    password: Project@2021
+
