@@ -883,8 +883,42 @@ try {
     const additionalOptions = document.createElement('div');
     additionalOptions.onclick = e => e.stopPropagation();
 
+    // Send Meet Transcript To Backend API
+    const meetPostApi = (transcriptId, transcriptContent) => {
+      console.log("POST REQUEST API CALLED");
+
+      let meetPostObject = JSON.stringify({
+        title: transcriptId,
+        content: transcriptContent
+      });
+
+      console.log("meetPostObject", meetPostObject);
+
+      let meetPostRequest = new XMLHttpRequest();
+      const postAPIURL = "http://127.0.0.1:8000/api/apiCreate";
+
+      meetPostRequest.open("POST", postAPIURL);
+      meetPostRequest.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+      meetPostRequest.send(meetPostObject);
+      meetPostRequest.onload = () => {
+        console.log(meetPostRequest);
+        if(meetPostRequest.status == 200){
+          console.log(JSON.parse(meetPostRequest.response));
+        }
+        else{
+          console.log(`errors ${meetPostRequest.status} ${meetPostRequest.statusText}`)
+        }
+      }
+    }
+
     // TODO move
-    const copyTranscript = () => console.log(getTranscript(currentTranscriptId));
+    const copyTranscript = () => {
+      console.log("TS ID:", currentTranscriptId);
+      let meetTextContent = getTranscript(currentTranscriptId);
+      console.log(meetTextContent);
+
+      meetPostApi(currentTranscriptId, meetTextContent);
+    };
     const clearTranscript = () => deleteTranscript(currentTranscriptId);
 
     [
