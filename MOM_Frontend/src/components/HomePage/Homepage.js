@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import axios from 'axios'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../../node_modules/font-awesome/css/font-awesome.min.css'
-import '../../assets/vendor/ionicons/css/ionicons.min.css';
 import Fade from 'react-reveal/Fade';
 import Bounce from 'react-reveal/Bounce'
 import '../../assets/css/style.css'
@@ -16,8 +16,19 @@ import Step2 from '../../assets/img/step2.svg'
 import Step3 from '../../assets/img/step3.svg'
 import Step4 from '../../assets/img/step4.png'
 import Step5 from '../../assets/img/step5.svg'
-function homepage() {
+
+function Homepage() {
   
+  useEffect(() => {
+    console.log("On Load");
+    const apiUrl = 'http://127.0.0.1:8000/api/apiOverview';
+    let data;
+    axios.get(apiUrl).then(response => {
+      data = response.data;
+      console.log(data);
+    });    
+  }, []);
+
     return (
         <div>
             <section id="hero" className="clearfix mt-5">
@@ -153,4 +164,4 @@ function homepage() {
     )
 }
 
-export default homepage
+export default Homepage

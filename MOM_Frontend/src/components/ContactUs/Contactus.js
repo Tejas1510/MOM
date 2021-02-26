@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../../node_modules/font-awesome/css/font-awesome.min.css'
-import '../../assets/vendor/ionicons/css/ionicons.min.css';
 import '../ContactUs/style.css'
 import ContactusImage from '../../assets/img/contactImage.jpg'
 const Contactus = () => {

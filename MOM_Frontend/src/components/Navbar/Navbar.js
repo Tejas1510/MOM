@@ -18,6 +18,7 @@ const Navbar = () => {
                     <li className="nav-item mr-2"><NavLink className="nav-link active" to="/" > Home</NavLink></li>
                     <li className="nav-item mr-2"><NavLink className="nav-link" to="/aboutus" >About Us</NavLink></li>
                     <li className="nav-item mr-2"><NavLink className="nav-link" to="/contactus" > Contact </NavLink></li>
+                    <li className="nav-item mr-2"><NavLink className="nav-link" to="/login" > Login</NavLink></li>
                     <li className="nav-item mr-2"><NavLink className="nav-link" to="/dashboard" > DashBoard</NavLink></li>
                 </ul>
             </div>

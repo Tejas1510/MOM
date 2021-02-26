@@ -6,6 +6,7 @@ import HomePage from './components/HomePage/Homepage';
 import Navbar from './components/Navbar/Navbar';
 import Aboutus from './components/AboutUs/Aboutus';
 import Contactus from './components/ContactUs/Contactus';
+import Login from './components/Login/Login';
 
 function App() {
   return (
@@ -20,6 +21,12 @@ function App() {
         <Route exact path ="/aboutus">
             <Navbar/>
             <Aboutus/>
+            <br/>
+            <Footer/>
+        </Route>
+        <Route exact path ="/login">
+            <Navbar/>
+            <Login/>
             <br/>
             <Footer/>
         </Route>
