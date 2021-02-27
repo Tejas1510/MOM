@@ -1,31 +1,45 @@
-# from rest_framework.generics import ListAPIView, RetrieveAPIView
-# from rest_framework.views import APIView
-# from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from Summarizer.models import MeetContent
 from .serializers import MeetContentSerializer
-from allauth.socialaccount.providers.oauth2.client import OAuth2Client
+from Summarizer.forms import CustomUserCreationForm
+from django.contrib.auth import login, authenticate, logout
+from rest_framework.views import APIView
+from .serializers import UserSerializer, UserSerializerWithToken
+from rest_framework import permissions, status
+from Summarizer.models import User
 
-# Social Login Imports
-from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
-from rest_auth.registration.views import SocialLoginView
 
-# Google Login API View
-class GoogleLogin(SocialLoginView):
-    adapter_class = GoogleOAuth2Adapter
-    callback_url = "http://127.0.0.1:8000/api/rest-auth/google/callback/"
-    client_class = OAuth2Client
+@api_view(['GET'])
+def current_user(request):
+    """
+    Determine the current user by their token, and return their data
+    """
+    serializer = UserSerializer(request.user)
+    return Response(serializer.data)
 
-# class MeetContentListView(ListAPIView):
-#     queryset = MeetContent.objects.all()
-#     serializer_class = MeetContentSerializer
+class UserList(APIView):
+    """
+    Create a new user. It's called 'UserList' because normally we'd have a get
+    method here too, for retrieving a list of all User objects.
+    """
+    permission_classes = (permissions.AllowAny,)
+    def post(self, request, format=None):
+        serializer = UserSerializerWithToken(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# class MeetContentDetailView(RetrieveAPIView):
-#     queryset = MeetContent.objects.all()
-#     serializer_class = MeetContentSerializer
+@api_view(['POST'])
+def getMeet(request):
+    email = str(request.data['email'])
+    print("Email: ", email)
+    meets = MeetContent.objects.filter(owner=email)
+    serializer = MeetContentSerializer(meets, many=True)
+    return Response(serializer.data)
 
 @api_view(['GET'])
 def apiOverview(request):
@@ -34,7 +48,7 @@ def apiOverview(request):
     return Response(serializer.data)
 
 @api_view(['POST'])
-def postMeetContent(request):
+def createMeet(request):
     serializer = MeetContentSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()

@@ -1,0 +1,53 @@
+<html>
+    <head>
+<style>
+    @media(min-width: 500px) {
+        #signin {
+            width: 40%;
+        }
+    }
+</style>
+</head>
+<body>
+
+{% if loginStatus != 'OK' %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert">
+    <strong>Incorrect Credentials.</strong>
+    <button type="button" class="btn-close" id="close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <script>
+  document.getElementById("close").onclick = function() {
+          document.getElementById("alert").style.display = "none";
+  }
+  </script>
+{% endif %}
+
+<div class="form-signin container my-5 text-center align-self-center shadow p-4" id="signin">
+    <form method="POST">
+        {% csrf_token %}
+        <h1 class="h3 mb-3">Sign In</h1>
+        <label for="inputEmail" class="visually-hidden">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required
+            autofocus>
+        <label for="inputPassword" class="visually-hidden my-2">Password</label>
+        <input type="password" id="inputPassword" class="form-control my-2" name="password" placeholder="Password"
+            required>
+
+        <button class="w-100 btn btn-lg btn-primary my-2" type="submit">Sign in</button>
+
+        <div class="text-center my-2">
+            <a href="/reset_password/">
+                <center class="my-2">Forgot Password ?</center>
+            </a>
+            Don't have an account? <br><a href="" class="text-info m-l-5"><b>Sign Up (For
+                    Professionals)</b></a><br>
+            <a href="" class="text-info m-l-5"><b>Sign Up (For Students)</b></a>
+        </div>
+
+    </form>
+
+
+</div>
+
+</body>
+</html>
