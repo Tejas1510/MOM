@@ -5,7 +5,8 @@ import '../AboutUs/style.css'
 import AboutImage1 from '../../assets/img/aboutImage.jpg'
 import AboutImage2 from '../../assets/img/aboutImage2.jpg'
 import AboutImage3 from '../../assets/img/aboutImage3.png'
-const Aboutus = () => {
+
+const Aboutus = (props) => {    
     return (
         <div>
            <section className="aboutus">
@@ -28,12 +29,12 @@ const Aboutus = () => {
                             <p>Meeting minutes are time-consuming, distracting, and boring, which leaves room for inefficiencies and greater expenses. In fact, $37 billion is wasted annually in the U.S. on unproductive meetings.</p>
                         </div>
                         <div className="col-sm-6 col-12">
-                            <img src={AboutImage1} className="img-fluid" ></img>
+                            <img src={AboutImage1} alt="about" className="img-fluid" ></img>
                         </div>
                     </div>
                     <div className="row aboutRow">
                         <div className="col-sm-6 col-12">
-                            <img src={AboutImage2} className="img-fluid" ></img>
+                            <img src={AboutImage2} alt="about" className="img-fluid" ></img>
                         </div>
                         <div className="col-12 col-sm-6">
                             <h2 className="aboutHead1"><b>What is the Plan?</b></h2>
@@ -44,14 +45,14 @@ const Aboutus = () => {
                         <div className="col-12 col-sm-6">
                             <h2 className="aboutHead1"><b>What is our ultimate Goal?</b></h2>
                             <p>We want you to focus on your meetings while leaving the hassle of documentation to AI.</p>
-                            <ul class="list-style">
+                            <ul className="list-style">
   									<li><p>Manage your meetings the way you always dreamed to</p></li>
   									<li><p>Never miss a thing</p></li>
   									<li><p>Be fully integrated with your software</p></li>
   							</ul>
                         </div>
                         <div className="col-sm-6 col-12">
-                            <img src={AboutImage3} className="img-fluid" ></img>
+                            <img src={AboutImage3} alt="about" className="img-fluid" ></img>
                         </div>
                     </div>
                 </div>

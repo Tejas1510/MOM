@@ -7,35 +7,47 @@ import Navbar from './components/Navbar/Navbar';
 import Aboutus from './components/AboutUs/Aboutus';
 import Contactus from './components/ContactUs/Contactus';
 import Login from './components/Login/Login';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
+  // DECLARE LOGIN STATE FOR APP
+  const [state, setState] = useState({logged_in: false, email: '', name: ''});  
+
   return (
     <div>
       <Switch>
         <Route exact path ="/">
-            <Navbar/>
+            <Navbar userState={state} manageState={setState}/>
             <HomePage/>
             <br/>
             <Footer/>
         </Route>
+        <Route exact path ="/dashboard">
+            <Navbar userState={state} manageState={setState}/>
+            <Dashboard userState={state} manageState={setState}/>
+            <br/>
+            <Footer/>
+        </Route>
         <Route exact path ="/aboutus">
-            <Navbar/>
+            <Navbar userState={state} manageState={setState}/>
             <Aboutus/>
             <br/>
             <Footer/>
         </Route>
         <Route exact path ="/login">
-            <Navbar/>
-            <Login/>
+            <Navbar userState={state} manageState={setState}/>
+            <Login userState={state} manageState={setState}/>
             <br/>
             <Footer/>
         </Route>
-        {/* <Route exact path ="/contactus">
-            <Navbar/>
+        <Route exact path ="/contactus">
+            <Navbar userState={state} manageState={setState}/>
             <Contactus/>
             <br/>
             <Footer/>
-        </Route> */}
+        </Route>
         <Redirect to="/" />
       </Switch>
     </div>

@@ -1,168 +1,76 @@
-.wrapper {
-    text-align: center;
-    margin-top: 80px;
-  }
-  .headCont{
-    padding: 2px;
-    margin: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(0,0,0,0.4);
-  }
-  .card {
-    color: white;
-    font-style: sans-serf;
-    background: #00264D;
-    border-radius: 3px;
-    display: inline-block;
-    height: 300px;
-    margin: 1rem;
-    position: relative;
-    width: 25%;
-  }
-
-.Empasized{
-    color: deepskyblue;
-}
-.heading{
-    font-size: 20px;
-    font-family: 'Montserrat', serif;
-    font-weight: 800;
+.formContainer{
+	background-color: rgb(9, 46, 75);;
+	box-shadow: 0 20px 50px rgba(9, 46, 75, 0.7);
+	width: 350px;
+	margin: auto;
+	border: 1px solid black;
 }
 
-.headerContainer{
-    margin-top: 100px;
+.signInContainer , .signUpContainer{
+	display: none;
 }
 
-.startNow{
-    background-color: deepskyblue;
-    /* border: 1px solid #fff; */
-    /* border: 1.2px solid #fff; */
-    color: #fff;
-    padding: 15px 30px 15px 30px;
-    margin: 30px 0px 0px 0px;
-    width: 80%;
-    text-decoration: none;
-    text-align: center;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: bold;
-}
-a{
-    text-decoration: none;
-}
-.startNow:hover{
-    background-color: white;
-    border: 1.2px solid deepskyblue;
-    color: deepskyblue;
-    text-decoration: none;
+.signInHeader , .signUpHeader{
+	color: white;
+	width: 50%;
+	background-color:  rgb(9, 46, 75);;
+	cursor: pointer;
+	display: inline-block;
+	opacity: 0.6;
+	padding: 10px 0;
+	font-size: large;
+	text-align: center;	
 }
 
-.pageWidth{
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px 0 20px;
+.activeHeader{
+	opacity: 1;
+	font-weight: bold;
+	border-bottom: 3px solid white;
 }
 
-.feature{
-    display: flex;
-    /* justify-content: space-between; */
-    justify-content: space-around;
-    align-items: center;
-    margin: 170px 0;
+.activeContainer{
+	display: block;
 }
 
-.zoomLogo{
-    vertical-align: middle;
-    width: 140px;
-    height: 50px;
-    margin-bottom: 30px;
+.inputGroup{
+	margin: 10px;
+	padding: 5px 15px;
 }
 
-.featureHeading{
-    font-size: 28px;
-    font-family: 'Montserrat', serif;
-    font-weight: 700;
-}
-.featureImage{
-    margin-top: 30px;
+.inputGroup label{
+	color:white;
+	font-weight: bold;
 }
 
-.f1{
-    padding-bottom: 25px;
+.inputGroup input{
+	padding: 5px;
+	width: 100%;
+	outline: none;
+	border: none;
+	border-radius: 5px;
 }
 
-.video{
-    width: 100%;
-    height: 280px;
-    border: none;
-    padding-bottom: 30px;
-    box-sizing: border-box;
+.buttonLink{
+	background-color: #ccc;
+	display: inline-block;
+	color: black;	
+	padding: 15px 40px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-weight: bold;
+	margin: 0 0 20px 0;
 }
 
-.colaboration{
-    width: 100%;
-    margin: auto;
-    padding: 0 20px 0 20px;
-    background-color: #3d455c;
-    text-align: center;
-
+.buttonLink:hover{
+	background-color: white;
+	color: black;
 }
 
-.colaborationRow{
-        display: flex;
-        /* justify-content: space-between; */
-        justify-content: space-around;
-        align-items: center;
-        margin: 130px 0;
+.actionButton{
+	text-align: center;
 }
 
-.colaborationHeading{
-    color: white;
-}
-
-.colaborationPara{
-    color:#d2cfce;
-    line-height: 150%;
-    padding: 0 0 10px;
-}
-
-.signup{
-    background-color: deeppink;
-    color: #fff;
-    padding: 15px 30px 15px 30px;
-    margin: 30px 0px 0px 0px;
-    width: 80%;
-    text-align: center;
-    justify-content: center;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 6px;
-    width: 170px;
-    font-weight: bold;
-}
-
-.signup:hover{
-    text-decoration: none;
-    color: deeppink;
-    background-color: white;
-    border: 1.2px solid deeppink;
-}
-
-.workFlowRow{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 150px 0;
-}
-
-.workFlowHead{
-    color: #3d455c;
-    text-align: center;
-    font-weight: bold;
-}
-
-.workFlowSubHead{
-    text-align: center;
-    font-weight: bold;
+.infoBox{
+	color: white;
+	padding: 10px 30px;
 }

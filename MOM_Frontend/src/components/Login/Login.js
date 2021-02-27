@@ -1,60 +1,156 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../../../node_modules/font-awesome/css/font-awesome.min.css'
-import Fade from 'react-reveal/Fade';
-import Bounce from 'react-reveal/Bounce'
-import '../../assets/css/style.css'
-import '../HomePage/style.css'
-import headerImage from '../../assets/img/headerImage.svg'
-import ZoomLogo from '../../assets/img/zoomLogo.png'
-import FeatureZoom from '../../assets/img/featureZoom.png'
-import FeatureImage2 from '../../assets/img/featureImage2.svg'
-import ColaborationImage from '../../assets/img/colaborationImage.svg'
-import Step1 from '../../assets/img/step1.png'
-import Step2 from '../../assets/img/step2.svg'
-import Step3 from '../../assets/img/step3.svg'
-import Step4 from '../../assets/img/step4.png'
-import Step5 from '../../assets/img/step5.svg'
-import styles from './style.css'
-import GoogleLogin from 'react-google-login';
+import React, { useState } from 'react'
+import './style.css'
+import { useHistory } from "react-router-dom";
 
-function Login() {
-    const CLIENT_ID = "882188012713-j4ad7au5jf559ulap1ru0bg04m8rntga.apps.googleusercontent.com";
-    
-    const googleLogin = async (accesstoken) => {
-        let res = await axios.post(
-          "http://localhost:8000/api/rest-auth/google/",
-          {
-            access_token: accesstoken,
-          }
-        );
-        console.log("post request",res);
-        return await res.status;
-    };
-    
-    const loginResponse = (response) => {
-        console.log(response);
-        console.log(response.profileObj);
-        googleLogin(response.accessToken);
+function Login(props) {
+    const [state, setState] = useState({
+        activeTab: 'signIn',
+        signInEmail: '',
+        signInPassword: '',
+        signUpEmail: '',
+        signUpName: '',
+        signUpPassword1: '',
+        signUpPassword2: '',
+        signInClass: 'signInContainer activeContainer',
+        signUpClass: 'signUpContainer',
+        signInHeadClass: 'signInHeader activeHeader',
+        signUpHeadClass: 'signUpHeader',
+        infoContent: ''
+    });
+
+    let history = useHistory();
+
+    const signInTabClickHandler = () => {
+        setState({
+            ...state, activeTab: 'signIn', signInClass: 'signInContainer activeContainer',
+            signUpClass: 'signUpContainer', signInHeadClass: 'signInHeader activeHeader',
+            signUpHeadClass: 'signUpHeader'
+        });
     }
 
-    
+    const signUpTabClickHandler = () => {
+        setState({
+            ...state, activeTab: 'signUp', signInClass: 'signInContainer',
+            signUpClass: 'signUpContainer activeContainer', signInHeadClass: 'signInHeader',
+            signUpHeadClass: 'signUpHeader activeHeader'
+        });
+    };
+
+    const inputHandler = (e) => {
+        setState({ ...state, [e.target.name]: e.target.value });
+    }
+
+    const clickSignIn = (e) => {
+        const formData = {
+            'email': state.signInEmail,
+            'password': state.signInPassword
+        };
+        console.log("Sign In, formData", formData);
+        fetch('http://localhost:8000/token-auth/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(res => res.json())
+            .then(json => {
+                console.log("Login form json", json);
+                console.log("Login form json.user", json.user);
+                localStorage.setItem('token', json.token);
+                props.manageState({ logged_in: true, email: json.user.email, name: json.user.name});
+                history.push("/dashboard");
+            });
+    }
+
+    const clickSignUp = () => {
+        const formData = {
+            'email': state.signUpEmail,
+            'name': state.signUpName,
+            'password': state.signUpPassword1,
+            //'password2': state.signUpPassword2
+        };
+        console.log("Sign Up, formData", formData);
+
+        fetch('http://localhost:8000/api/users/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(res => res.json())
+            .then(json => {
+                console.log("Signup form json", json);
+                console.log("Signup form json.user", json.user);
+                localStorage.setItem('token', json.token);
+                props.manageState({ logged_in: true, email: json.email, name: json.name});
+                history.push("/dashboard");
+            });
+    }
 
     return (
-        <div className="wrapper">
-            <div className="card">
-                <div className="headCont">
-                    <h2>Login</h2>
+        <div>
+            <br /><br /><br /><br />
+            <div className="formContainer">
+                <div className="formHeader">
+                    <div className={state.signInHeadClass} onClick={signInTabClickHandler}>
+                        Sign In
+                    </div>
+                    <div className={state.signUpHeadClass} onClick={signUpTabClickHandler}>
+                        Sign Up
+                    </div>
                 </div>
-                <GoogleLogin clientId={CLIENT_ID}
-                buttonText="LOGIN WITH GOOGLE"
-                onSuccess={loginResponse}
-                onFailure={loginResponse}
-                cookiePolicy='single_host_origin'/>
+
+                <div className={state.signInClass}>
+                    <div className="inputGroup">
+                        <label>Email</label><br />
+                        <input type="email" name="signInEmail" value={state.signInEmail} onChange={inputHandler} />
+                    </div>
+
+                    <div className="inputGroup">
+                        <label>Password</label><br />
+                        <input type="password" name="signInPassword" value={state.signInPassword} onChange={inputHandler} />
+                    </div>
+
+                    <div className="actionButton">
+                        <br />
+                        <a className="buttonLink" onClick={clickSignIn}>Sign In</a>
+                    </div>
+                </div>
+
+                <div className={state.signUpClass}>
+                    <div className="inputGroup">
+                        <label>Name</label><br />
+                        <input type="text" name="signUpName" value={state.signUpName} onChange={inputHandler} />
+                    </div>
+
+                    <div className="inputGroup">
+                        <label>Email</label><br />
+                        <input type="email" name="signUpEmail" value={state.signUpEmail} onChange={inputHandler} />
+                    </div>
+
+                    <div className="inputGroup">
+                        <label>Password</label><br />
+                        <input type="password" name="signUpPassword1" value={state.signUpPassword1} onChange={inputHandler} />
+                    </div>
+
+                    <div className="inputGroup">
+                        <label>Confirm Password</label><br />
+                        <input type="password" name="signUpPassword2" value={state.signUpPassword2} onChange={inputHandler} />
+                    </div>
+
+                    <div className="actionButton">
+                        <a className="buttonLink" onClick={clickSignUp}>Sign Up</a>
+                    </div>
+                </div>
+
+                <div className="infoBox">
+                    {state.infoContent}
+                </div>
             </div>
         </div>
     )
 }
 
-export default Login
+export default Login;

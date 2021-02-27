@@ -1,9 +1,7 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios'
+import React from 'react'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../../node_modules/font-awesome/css/font-awesome.min.css'
 import Fade from 'react-reveal/Fade';
-import Bounce from 'react-reveal/Bounce'
 import '../../assets/css/style.css'
 import '../HomePage/style.css'
 import headerImage from '../../assets/img/headerImage.svg'
@@ -18,17 +16,6 @@ import Step4 from '../../assets/img/step4.png'
 import Step5 from '../../assets/img/step5.svg'
 
 function Homepage() {
-  
-  useEffect(() => {
-    console.log("On Load");
-    const apiUrl = 'http://127.0.0.1:8000/api/apiOverview';
-    let data;
-    axios.get(apiUrl).then(response => {
-      data = response.data;
-      console.log(data);
-    });    
-  }, []);
-
     return (
         <div>
             <section id="hero" className="clearfix mt-5">
@@ -44,7 +31,7 @@ function Homepage() {
                     </div>
 
                     <div className="col-md-6 intro-img order-md-last order-first mt-5" >
-                        <img src= { headerImage } className="img-fluid"/>
+                        <img src= { headerImage } className="img-fluid" alt='homepage'/>
                     </div>
                 </div>
 
@@ -54,12 +41,12 @@ function Homepage() {
               <div className="container">
                 <div className="row feature">
                   <div className="col-sm-6 col-12">
-                      <img className="img-fluid zoomLogo" src={ZoomLogo}></img>
-                      <h2 className="featureHeading f1"><span class="Empasized">ZOOM</span> video conferencing with Automated Meeting Notes</h2>
+                      <img className="img-fluid zoomLogo" src={ZoomLogo} alt='homepage'></img>
+                      <h2 className="featureHeading f1"><span className="Empasized">ZOOM</span> video conferencing with Automated Meeting Notes</h2>
                       <a className="startNow ">Learn More</a>
                   </div>
                   <div className="col-sm-6 col-12">
-                    <img className="img-fluid featureImage" src={FeatureZoom}></img>
+                    <img className="img-fluid featureImage" src={FeatureZoom} alt='homepage'></img>
                   </div>
                 </div>
                 <div className="row feature">
@@ -67,7 +54,7 @@ function Homepage() {
                     <img className="img-fluid featureImage" src={FeatureImage2}></img>
                   </div>
                   <div className="col-sm-6 col-12">
-                      <h2 className="featureHeading"><span class="Empasized">CREATE & INOVATE</span></h2>
+                      <h2 className="featureHeading"><span className="Empasized">CREATE & INOVATE</span></h2>
                       <h2 className="featureHeading">Leave the hassle to AI</h2>
 
                       <p>Your time, your mind, and your experience is unique and precious! In order to succeed, you must <strong>focus</strong> on what matters.</p>
@@ -76,11 +63,10 @@ function Homepage() {
                 </div>
                 <div className="row feature">
                   <div className="col-sm-6 col-12">
-                      <h2 className="featureHeading f1">A new way to your <span class="Empasized">Remote Convrsation</span></h2>
+                      <h2 className="featureHeading f1">A new way to your <span className="Empasized">Remote Convrsation</span></h2>
                       <p>Stay connected to your conversation. Get real-time action items extracted. Grab insights automatically on the fly. Enjoy a live transcript and skyrocket the productivity.</p>
                   </div>
                   <div className="col-sm-6 col-12">
-                    <iframe className="video" src="https://www.youtube.com/embed/XhCCNvx0yN8" ></iframe>
                   </div>
                 </div>
               </div>
@@ -95,7 +81,7 @@ function Homepage() {
                     <p className="colaborationPara">Stay nimble, stay savvy: use MOM with beloved video conferencing tools. Use MOM for Zoom meetings or use it with Slack. MOM works perfectly with Microsoft Teams, GoToMeeting, BlueJeans, or any other remote collaboration tool.</p>
                   </div>
                   <div className="col-12 mt-5">
-                    <img src={ColaborationImage} className="img-fluid"></img>
+                    <img src={ColaborationImage} className="img-fluid" alt='homepage'></img>
                   </div>
                   <a className="signup">Sign Up</a>
                 </div>
@@ -111,47 +97,47 @@ function Homepage() {
                 </div>
                 <div className="row workFlowRow">
                   <div className="col-sm-6 col-12">
-                    <h2 className="featureHeading"><span class="Empasized">Add Chrome Extension</span></h2>
+                    <h2 className="featureHeading"><span className="Empasized">Add Chrome Extension</span></h2>
                     <p>Add our chrome extension to your favourite video conference system like google meet, Zoom, Cisco Webex and enjoy the power of AI and NLP.</p>
                   </div>
                   <div className="col-sm-6 col-12">
-                    <img src={Step1} className="img-fluid"></img>
+                    <img src={Step1} className="img-fluid" alt='homepage'></img>
                   </div>
                 </div>
                 <div className="row workFlowRow">
                   <div className="col-sm-6 col-12">
-                    <img src={Step2} className="img-fluid"></img>
+                    <img src={Step2} className="img-fluid" alt='homepage'></img>
                   </div>
                   <div className="col-sm-6 col-12">
-                    <h2 className="featureHeading"><span class="Empasized">Record</span></h2>
+                    <h2 className="featureHeading"><span className="Empasized">Record</span></h2>
                     <p>Add MOM as a meeting attendee and you are ready to go. MOM will join your conversation as a smart AI-powered meeting assistant. Just push the record button on the app and </p>
                   </div>
                 </div>
                 <div className="row workFlowRow">
                   <div className="col-sm-6 col-12">
-                    <h2 className="featureHeading"><span class="Empasized">Provide Transcribe</span></h2>
+                    <h2 className="featureHeading"><span className="Empasized">Provide Transcribe</span></h2>
                     <p><strong>MOM</strong> transcribes your conversations on the fly.  MOM will generate a transcript <strong>enriched</strong> with speaker identification and voice separation, allowing you to <strong>understand</strong> exactly who said what.</p>                  </div>
                   <div className="col-sm-6 col-12">
-                    <img src={Step3} className="img-fluid"></img>
+                    <img src={Step3} className="img-fluid" alt='homepage'></img>
                   </div>
                 </div>
                 <div className="row workFlowRow">
                   <div className="col-sm-6 col-12">
-                    <img src={Step4} className="img-fluid"></img>
+                    <img src={Step4} className="img-fluid" alt='homepage'></img>
                   </div>
                   <div className="col-sm-6 col-12">
-                    <h2 className="featureHeading"><span class="Empasized">Translation</span></h2>
+                    <h2 className="featureHeading"><span className="Empasized">Translation</span></h2>
                     <p>We Provide Transcribe of the meeting in more than 12 languages used accross the globe this connecting individuals from various background.</p>
                   </div>
                 </div>
                 <div className="row workFlowRow">
                   <div className="col-sm-6 col-12">
-                    <h2 className="featureHeading"><span class="Empasized">Colaboration</span></h2>
+                    <h2 className="featureHeading"><span className="Empasized">Colaboration</span></h2>
                     <h4><b>Convert Converation into Actions</b></h4>
                     <p>From now on there is a <strong>platform</strong> for all your meetings and conversations. It's like having a remember-all-the-action-items and never-miss-the-follow-ups <strong>SUPERPOWER</strong> to better manage meetings, focus on the things that matter, and free up time for <strong>yourself</strong>.</p>
                   </div>
                   <div className="col-sm-6 col-12">
-                    <img src={Step5} className="img-fluid"></img>
+                    <img src={Step5} className="img-fluid" alt='homepage'></img>
                   </div>
                 </div>
               </div>

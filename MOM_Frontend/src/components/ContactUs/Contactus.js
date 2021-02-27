@@ -10,7 +10,7 @@ const Contactus = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-4 col-12 left">
-                            <img src={ContactusImage} className="img-fluid" ></img>
+                            <img src={ContactusImage} alt={'Contact'} className="img-fluid" ></img>
                             <h1 className="aboutUsHead">Contact Us</h1>
                             <p className="aboutUsPara">We are here with a mission to increase productivity, make colaboration easy and convert your conversation into actions with an effective and efficient use of AI.</p>
                         </div>

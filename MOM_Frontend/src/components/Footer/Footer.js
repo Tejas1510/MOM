@@ -7,38 +7,38 @@ function footer() {
     return (
         <div>
             
-<footer class="page-footer middleColor  font-small unique-color-dark">
+<footer className="page-footer middleColor  font-small unique-color-dark">
 
-  <div class="footerColor">
-    <div class="container">
+  <div className="footerColor">
+    <div className="container">
 
       
-      <div class="row py-4 d-flex align-items-center">
+      <div className="row py-4 d-flex align-items-center">
 
         
-        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0 footerTitle">
-          <h6 class="mb-0">Get connected with us on social networks!</h6>
+        <div className="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0 footerTitle">
+          <h6 className="mb-0">Get connected with us on social networks!</h6>
         </div>
         
 
         
-        <div class="col-md-6 col-lg-7 text-center text-md-right">
+        <div className="col-md-6 col-lg-7 text-center text-md-right">
 
           
-          <a class="fb-ic">
-            <i class="fa fa-facebook-f white-text mr-4"> </i>
+          <a className="fb-ic">
+            <i className="fa fa-facebook-f white-text mr-4"> </i>
           </a>
-                    <a class="tw-ic">
-            <i class="fa fa-twitter white-text mr-4"> </i>
+                    <a className="tw-ic">
+            <i className="fa fa-twitter white-text mr-4"> </i>
           </a>
-                    <a class="gplus-ic">
-            <i class="fa fa-google-plus white-text mr-4"> </i>
+                    <a className="gplus-ic">
+            <i className="fa fa-google-plus white-text mr-4"> </i>
           </a>
-                    <a class="li-ic">
-            <i class="fa fa-linkedin white-text mr-4"> </i>
+                    <a className="li-ic">
+            <i className="fa fa-linkedin white-text mr-4"> </i>
           </a>
-                    <a class="ins-ic">
-            <i class="fa fa-instagram white-text"> </i>
+                    <a className="ins-ic">
+            <i className="fa fa-instagram white-text"> </i>
           </a>
 
         </div>
@@ -51,27 +51,27 @@ function footer() {
   </div>
 
   
-  <div class="container text-center text-md-left mt-5">
+  <div className="container text-center text-md-left mt-5">
 
    
-    <div class="row mt-3">
+    <div className="row mt-3">
 
       
-      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+      <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-        <h6 class="text-uppercase white font-weight-bold">Multilinguial Meet Summarizer</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" />
+        <h6 className="text-uppercase white font-weight-bold">Multilinguial Meet Summarizer</h6>
+        <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" />
         <p className="white">We are here with a mission to increase productivity, make colaboration easy and convert your conversation into actions with an effective and efficient use of AI.</p>
 
       </div>
       
 
       
-      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+      <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
         
-        <h6 class="text-uppercase white font-weight-bold">SERVICES</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" />
+        <h6 className="text-uppercase white font-weight-bold">SERVICES</h6>
+        <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" />
         <p>
           <a  href="#!">Chrome Extension</a>
         </p>
@@ -89,11 +89,11 @@ function footer() {
       
 
       
-      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+      <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
         
-        <h6 class="text-uppercase white font-weight-bold">Useful links</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" />
+        <h6 className="text-uppercase white font-weight-bold">Useful links</h6>
+        <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" />
         <p>
           <NavLink to="/">Home</NavLink>
         </p>
@@ -111,19 +111,19 @@ function footer() {
       
 
       
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+      <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
        
-        <h6 class="text-uppercase white font-weight-bold">Contact</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" />
+        <h6 className="text-uppercase white font-weight-bold">Contact</h6>
+        <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" />
         <p className="white"> 
-          <i class="fa fa-home white mr-3"></i> Nagpur, 440018, India</p>
+          <i className="fa fa-home white mr-3"></i> Nagpur, 440018, India</p>
         <p className="white">
-          <i class="fa fa-envelope white mr-3"></i> mom@gmail.com</p>
+          <i className="fa fa-envelope white mr-3"></i> mom@gmail.com</p>
         <p className="white">
-          <i class="fa fa-phone white mr-3"></i> + 01 234 567 88</p>
+          <i className="fa fa-phone white mr-3"></i> + 01 234 567 88</p>
         <p className="white">
-          <i class="fa fa-print white mr-3"></i> + 01 234 567 89</p>
+          <i className="fa fa-print white mr-3"></i> + 01 234 567 89</p>
 
       </div>
       
@@ -132,7 +132,7 @@ function footer() {
     
   </div>
   
-  <div class="footer-copyright text-center py-3 copyrightColor">Copyright © 2020 
+  <div className="footer-copyright text-center py-3 copyrightColor">Copyright © 2020 
     <a href="https://mdbootstrap.com/"> MOM</a>
   </div>
 
