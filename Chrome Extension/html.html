@@ -13,6 +13,9 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+
+    <script src="popup.js"></script>
+
     <style>
       /* Modal Structure */
 
@@ -52,6 +55,24 @@
 
       .modal-content {
         padding: 0 22px;
+      }
+
+      .loginContainer{
+        padding: 0 22px;
+        font-size: large;
+      }
+
+      .loginContainer a:link, .loginContainer a:visited {
+        color:white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: mediumseagreen;
+      }
+
+      .loginContainer a:hover{
+        color:mediumseagreen;
+        border: 2px solid mediumseagreen;        
+        background-color: white;
       }
 
       .modal-icons {
@@ -108,6 +129,12 @@
     <div class="modal-content">
       <p>Easily Transcribe your Meetings</p>
     </div>
+
+    <!-- If Logged in it shows email and name, otherwise login button -->
+    <div id="loginContainer" class="loginContainer">
+    </div>
+    <br/>
+
     <div class="modal-icons">
       <div class="flex-container">
         <div class="flex">

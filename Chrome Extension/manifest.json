@@ -14,7 +14,20 @@
     "js": ["inject.js"],
     "run_at": "document_idle",
     "all_frames": false
+  }, 
+  {
+    "matches": ["http://localhost:3000/*"],
+    "js": ["loginContentScript.js"],
+    "run_at": "document_idle",
+    "all_frames": false
   }],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
   "web_accessible_resources": ["stenographer.js"],
-  "manifest_version": 2
+  "manifest_version": 2,
+  "permissions": [
+    "storage"
+  ]
 }
