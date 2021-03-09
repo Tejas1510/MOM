@@ -59,7 +59,7 @@ visually challenged people.
 | S.No. | Name                      | Role                      | GitHub Username                                      |
 | ----- | --------------------------| ------------------------- | ---------------------------------------------------- |
 | 1.    | Yash Agrawal              | Frontend Developer        |                                                      |
-| 2.    | Tejas Sudhir Tapas        | UI Designer               |                                                      |
+| 2.    | Tejas Sudhir Tapas        | Frontend Developer               |                                                      |
 | 3.    | Atul Thakre               | Backend Developer         |                                                      |
-| 4.    | Yash Telkhade             | Machine Learning Engineer |                                                      |
-| 5.    | Ayush Kedia               | Machine Learning Engineer |                                                      |
+| 4.    | Yash Telkhade             | Chrome Extension Part & Testing |                                                      |
+| 5.    | Ayush Kedia               | Chrome Extension Part & Testing  |                                                      |
