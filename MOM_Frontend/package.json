@@ -12,6 +12,7 @@
     "bootstrap": "4.5.2",
     "jquery": "^3.5.1",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.5.1",
     "react-dom": "^16.13.1",
     "react-google-login": "^5.2.2",
     "react-reveal": "^1.2.2",

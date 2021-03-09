@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Sidebar from './Sidebar.js'
 import Card from './OutlinedCard.js'
+
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -49,38 +50,51 @@ class Dashboard extends Component {
                     }
                 });
         }
+    }
 
-
-
-
-
+    logoutHandler = () => {
+        localStorage.removeItem('token');
+        console.log('Handle Logout Called');
+        this.props.manageState({ logged_in: false, email: '' , name: ''});
     }
 
     componentDidMount() {
-        this.getMeet();
+        let token = localStorage.getItem('token');
+        if (token) {
+            fetch('http://localhost:8000/api/current_user/', {
+                headers: {
+                    Authorization: `JWT ${localStorage.getItem('token')}`
+                }
+            })
+                .then(res => res.json())
+                .then(json => {
+                    if (json === undefined || json.email === '' || json.email === undefined) {
+                        // If the token is invalid or expired
+                        //console.log('navbar componentDidMount TOken Expired', json)
+                        this.props.manageState({ logged_in: false, email: '', name: ''});
+                    }
+                    else {
+                        // If token is correct
+                        this.props.manageState({ logged_in: true, email: json.email, name: json.name});
+                        this.getMeet();
+                    }
+                });
+        }        
     }
 
     render() {
        
         const logged_in_dashboard = (
-            <div style={{marginLeft: "20px"}}>
-                <Sidebar user={this.props.userState.email} meetL= {this.state.meetList}></Sidebar>
+            <div>
+                <Sidebar logoutHandler={this.logoutHandler} user={this.props.userState.email} meetL= {this.state.meetList}></Sidebar>
             </div>)
 
         const logged_out_dashboard = (
-            <div>
-                Login To View Dashboard
+            <div>           
             </div>)
-
         return (
-
             <div>
-            
-                {
-                    this.props.userState.logged_in ? logged_in_dashboard : logged_out_dashboard
-                }
-                
-              
+                {this.props.userState.logged_in ? logged_in_dashboard : logged_out_dashboard}
             </div>
         )
     }
