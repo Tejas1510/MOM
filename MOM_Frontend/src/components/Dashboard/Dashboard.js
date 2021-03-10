@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../../node_modules/font-awesome/css/font-awesome.min.css';
+import './style.css'
 class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            meetList: ''
+            meetList: []
         }
     }
 
@@ -37,9 +39,10 @@ class Dashboard extends Component {
                             .then(res => res.json())
                             .then(req2 => {
                                 console.log("getMeet", req2);
-                                let dashboardContent = "";
+                                let dashboardContent = [];
                                 req2.forEach(element => {
-                                    dashboardContent += JSON.stringify(element);
+                                    console.log(element)
+                                    dashboardContent.push((element));
                                 });
                                 console.log("dashboardContent", dashboardContent);
                                 this.setState({ meetList: dashboardContent });
@@ -64,7 +67,22 @@ class Dashboard extends Component {
             <div style={{margin: "30px"}}>
                 Welcome {this.props.userState.email}<br /><br/>
                 List of Meets: <br/><br/>
-                {this.state.meetList}
+                {this.state.meetList.map((m)=>(
+                    <div className="container mt-2">
+                        <div className="card">
+                            <div className="card-body">
+                                <h5 className="card-title">{m.title}</h5>
+                                <h6 className="card-subtitle mb-2 text-muted">{m.date}</h6>
+                                <p className="card-text">{m.transcript}</p>
+                                <p className="card-text">{m.summary}</p>
+                                <a href="#" className="card-link">{m.hostname}</a>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+
+
+
             </div>)
 
         const logged_out_dashboard = (
