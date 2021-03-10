@@ -86,7 +86,7 @@ class Dashboard extends Component {
        
         const logged_in_dashboard = (
             <div>
-                <Sidebar logoutHandler={this.logoutHandler} user={this.props.userState.email} meetL= {this.state.meetList}></Sidebar>
+                <Sidebar logoutHandler={this.logoutHandler} user={this.props.userState.email} name={this.props.userState.name} meetL= {this.state.meetList}></Sidebar>
             </div>)
 
         const logged_out_dashboard = (
