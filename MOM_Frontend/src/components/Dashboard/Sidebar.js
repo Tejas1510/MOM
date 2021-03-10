@@ -91,7 +91,7 @@ function Sidebar(props) {
       <List >
         <ListItem>
           <Chip
-            avatar={<Avatar>{props.user.charAt(0).toUpperCase()}</Avatar>}
+            avatar={<Avatar>{props.name.charAt(0).toUpperCase()}</Avatar>}
             label={props.name}
             clickable
             color="secondary"
