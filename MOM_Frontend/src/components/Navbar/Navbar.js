@@ -19,8 +19,9 @@ class Navbar extends React.Component {
 
     componentDidMount() {
         let token = localStorage.getItem('token');
+        console.log('Navbar.js: token from localstorage',token);
         if (token) {
-            fetch('api/current_user/', {
+            fetch('http://localhost:8000/api/current_user/', {
                 headers: {
                     Authorization: `JWT ${localStorage.getItem('token')}`
                 }
