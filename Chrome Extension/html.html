@@ -26,7 +26,7 @@
         margin: 0;
         min-height: 180px;
         padding: 0;
-        width: 450px;
+        width: 350px;
       }
 
       h1 {
@@ -54,19 +54,29 @@
       }
 
       .modal-content {
-        padding: 0 22px;
+        padding: 15px;
+        width:100%;
+        align-items: center;
       }
 
       .loginContainer{
-        padding: 0 22px;
+        padding: 10 22px;
         font-size: large;
+        width: 100%;
+        background-color:white;
+        border: transparent;
       }
 
       .loginContainer a:link, .loginContainer a:visited {
         color:white;
-        padding: 5px 10px;
         border-radius: 5px;
         background-color: mediumseagreen;
+        width: 100%;
+        padding:10px;
+        padding-left:50px;
+        padding-right: 50px;
+        margin: auto;
+        align-self:center;
       }
 
       .loginContainer a:hover{
@@ -130,8 +140,8 @@
     </div>
     <div class="modal-content">
        <!-- If Logged in it shows email and name, otherwise login button -->
-      <div id="loginContainer" class="loginContainer">
-      </div>
+      <button id="loginContainer" class="loginContainer">
+      </button>
     </div>
 
     <div class="modal-icons">
