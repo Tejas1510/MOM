@@ -88,6 +88,7 @@
       .logo-icon {
         vertical-align: text-bottom;
         margin-right: 12px;
+        text-align: center;
       }
 
       .version {
@@ -105,6 +106,7 @@
         opacity: 1;
         transition: opacity 0.2s ease-in-out;
         width: 520px;
+        align-items: center;
       }
 
       .flex:hover {
@@ -122,29 +124,38 @@
   <body>
     <div class="modal-header">
       <h1 class="logo">
-        <img class="logo-icon" src="icon.png" />Multilingual Meet Summarizer
-        <span class="version"></span>
+        <img class="logo-icon" src="MD.png" /><strong>Meet Digest</strong>
+        <p class="version">Easily Transcribe your Meetings</p>
       </h1>
     </div>
     <div class="modal-content">
-      <p>Easily Transcribe your Meetings</p>
+       <!-- If Logged in it shows email and name, otherwise login button -->
+      <div id="loginContainer" class="loginContainer">
+      </div>
     </div>
-
-    <!-- If Logged in it shows email and name, otherwise login button -->
-    <div id="loginContainer" class="loginContainer">
-    </div>
-    <br/>
 
     <div class="modal-icons">
       <div class="flex-container">
         <div class="flex">
           <a href="https://meet.google.com/" target="_blank">
-            <i class="fa fa-video-camera" aria-hidden="true"  style="color:rgb(55, 172, 123) "> Google Meet</i>
+            <i
+              class="fa fa-video-camera"
+              aria-hidden="true"
+              style="color: rgb(55, 172, 123)"
+            >
+              Google Meet</i
+            >
           </a>
         </div>
         <div class="flex">
-          <a href="https://github.com/Tejas1510/MOM" target="_blank">
-            <i class="fa fa-github" style="color:rgb(12, 11, 11) "> Github</i>
+          <a href="https://meetsummarizer.netlify.app/" target="_blank">
+            <i
+              class="fa fa-hand-o-right"
+              aria-hidden="true"
+              style="color: blue"
+            >
+              Visit Website</i
+            >
           </a>
         </div>
       </div>

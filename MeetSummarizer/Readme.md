@@ -32,5 +32,11 @@ python manage.py migrate
 ```
 python manage.py createsuperuser
 ```
+8. Install libraries:
+```
+pip install django-cors-headers
+pip install djangorestframework
+pip install djangorestframework-jwt-1.11.0
+```
    username: Project2021
    password: Project@2021

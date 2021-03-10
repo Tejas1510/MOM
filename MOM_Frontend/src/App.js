@@ -25,10 +25,7 @@ function App() {
             <Footer/>
         </Route>
         <Route exact path ="/dashboard">
-            <Navbar userState={state} manageState={setState}/>
             <Dashboard userState={state} manageState={setState}/>
-            <br/>
-            <Footer/>
         </Route>
         <Route exact path ="/aboutus">
             <Navbar userState={state} manageState={setState}/>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .card{
     width: 18rem;
     display: flex;
@@ -5,3 +6,10 @@
 
 }
 
+=======
+.App{
+    background-color:rgb(61, 61, 238);
+    color:white;
+    height:100vh;
+}
+>>>>>>> 461c6c1f2a88374dd54bb6b061057e60bd8dca23
