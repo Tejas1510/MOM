@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 import '../../assets/css/style.css'
 import '../HomePage/style.css'
 import headerImage from '../../assets/img/headerImage.svg'
-import ZoomLogo from '../../assets/img/zoomLogo.png'
+import GoogleMeet from '../../assets/img/googlemeet.png'
 import FeatureZoom from '../../assets/img/featureZoom.png'
 import FeatureImage2 from '../../assets/img/featureImage2.svg'
 import ColaborationImage from '../../assets/img/colaborationImage.svg'
@@ -41,8 +41,8 @@ function Homepage() {
               <div className="container">
                 <div className="row feature">
                   <div className="col-sm-6 col-12">
-                      <img className="img-fluid zoomLogo" src={ZoomLogo} alt='homepage'></img>
-                      <h2 className="featureHeading f1"><span className="Empasized">ZOOM</span> video conferencing with Automated Meeting Notes</h2>
+                      <img className="img-fluid zoomLogo" src={GoogleMeet} alt='homepage'></img>
+                      <h2 className="featureHeading f1"><span className="Empasized">Google Meet</span> video conferencing with Automated Meeting Notes</h2>
                       <a className="startNow ">Learn More</a>
                   </div>
                   <div className="col-sm-6 col-12">
@@ -63,10 +63,11 @@ function Homepage() {
                 </div>
                 <div className="row feature">
                   <div className="col-sm-6 col-12">
-                      <h2 className="featureHeading f1">A new way to your <span className="Empasized">Remote Convrsation</span></h2>
+                      <h2 className="featureHeading f1">A new way to your <span className="Empasized">Remote Conversation</span></h2>
                       <p>Stay connected to your conversation. Get real-time action items extracted. Grab insights automatically on the fly. Enjoy a live transcript and skyrocket the productivity.</p>
                   </div>
                   <div className="col-sm-6 col-12">
+                    
                   </div>
                 </div>
               </div>

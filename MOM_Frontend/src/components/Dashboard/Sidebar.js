@@ -74,6 +74,8 @@ function Sidebar(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const history = useHistory();
 
+  console.log(props)
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -90,7 +92,7 @@ function Sidebar(props) {
         <ListItem>
           <Chip
             avatar={<Avatar>{props.user.charAt(0).toUpperCase()}</Avatar>}
-            label={props.user}
+            label={props.name}
             clickable
             color="secondary"
           />
@@ -99,14 +101,14 @@ function Sidebar(props) {
         <NavLink to="/">
           <ListItem button>
             <HomeIcon style={{ color: 'white' }}></HomeIcon>
-            <ListItemText primary="Home" style={{ marginLeft: '30px' }} />
+            <ListItemText primary="Home" style={{ marginLeft: '30px',color:'white' }} />
           </ListItem>
         </NavLink >
 
         <NavLink to="/aboutus">
         <ListItem button>
           <InfoIcon style={{ color: 'white' }}></InfoIcon>
-          <ListItemText primary="About Us" style={{ marginLeft: '30px' }} />
+          <ListItemText primary="About Us" style={{ marginLeft: '30px',color:'white' }} />
         </ListItem>
         </NavLink>
 
@@ -118,7 +120,7 @@ function Sidebar(props) {
       <NavLink to="/contactus">
         <ListItem button>
           <CallIcon style={{ color: 'white' }}></CallIcon>
-          <ListItemText primary="Contact Us" style={{ marginLeft: '30px' }} />
+          <ListItemText primary="Contact Us" style={{ marginLeft: '30px',color:'white' }} />
         </ListItem>
         </NavLink>
 

@@ -1,5 +1,5 @@
 .Empasized{
-    color: deepskyblue;
+    color: #1aa260;
 }
 .heading{
     font-size: 20px;
@@ -52,8 +52,8 @@ a{
 
 .zoomLogo{
     vertical-align: middle;
-    width: 140px;
-    height: 50px;
+    width: 240px;
+    height: 80px;
     margin-bottom: 30px;
 }
 

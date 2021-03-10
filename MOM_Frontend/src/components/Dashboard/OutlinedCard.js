@@ -96,7 +96,8 @@ export default function OutlinedCard(props) {
   const bull = <span className={classes.bullet}>•</span>;
   const [modalShow, setModalShow] = React.useState(false);
   return (
-    <Card className={classes.root} style={{backgroundColor: "white",borderRight:"6px solid violet", boxShadow:" 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)"}}>
+    <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap'}}>
+    <Card className={classes.root} style={{backgroundColor: "white",borderRight:"6px solid violet", boxShadow:" 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.10)"}}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
         Date: {props.meet.date.substring(0,10)}<br></br>
@@ -133,5 +134,6 @@ export default function OutlinedCard(props) {
       />
       </CardActions>
     </Card>
+    </div>
   );
 }
