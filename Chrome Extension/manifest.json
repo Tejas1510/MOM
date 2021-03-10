@@ -3,10 +3,10 @@
   "description": "Record Google Meet Transcripts",
   "version": "3",
   "icons": {
-    "128": "icon.png"
+    "128": "MD.png"
   },
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "MD.png",
     "default_popup": "html.html"
   },
   "content_scripts": [{
