@@ -905,9 +905,9 @@ try {
       const clearTranscript = () => deleteTranscript(currentTranscriptId);
 
       [
-        makeMenuOption(SVG_COPY, 10, 12, 'Start Meet Transciption', tryTo(copyTranscript, 'copying transcript')),
-        makeMenuOption(SVG_RECYCLE, 12, 12, 'Clear Meet Transciption', tryTo(clearTranscript, 'clearing transcript')),
-        makeMenuOption(SVG_SHREDDER, 12, 12, 'Delete all Transciption', tryTo(deleteTranscripts, 'deleting all transcripts')),
+        makeMenuOption(SVG_COPY, 10, 12, 'Generate Meet Transcipt', tryTo(copyTranscript, 'copying transcript')),
+        makeMenuOption(SVG_RECYCLE, 12, 12, 'Clear Meet Transcipt', tryTo(clearTranscript, 'clearing transcript')),
+        makeMenuOption(SVG_SHREDDER, 12, 12, 'Delete all Transcipts', tryTo(deleteTranscripts, 'deleting all transcripts')),
         // makeMenuOption(SVG_MUTE, 15, 12, 'Hide captions while recording', () => {}),
       ].forEach((el) => additionalOptions.appendChild(el));
 
@@ -1039,10 +1039,10 @@ try {
     const COLOR_GREY = '5F6368';
 
     // used for toggle icon when active
-    const COLOR_ORANGE = 'DA3025';
+    const COLOR_ORANGE = '0af985';
 
     // used for delete transcript button
-    const COLOR_RED = 'D19797';
+    const COLOR_RED = '0af985';
 
     // Add stylesheet to DOM
     const STYLE = document.createElement('style')
@@ -1057,7 +1057,7 @@ try {
     top: 40px;
     left: 0;
     color:black;
-    width: 350px;
+    width: 300px;
     padding: 12px;
     padding-bottom: 10px;
     padding-top: 18px;
@@ -1079,9 +1079,20 @@ try {
     border-radius: 3px;
     font-size: 16px;
     color: black;
-    background: #F9850A;
+    background: #0af985;
     box-shadow:  0px 2px 6px 0px rgba(0,0,0,0.4);
     transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .__gmt-button > div label:hover{
+     cursor:pointer;
+     cursor:pointer;
+     background:#03e9f4;
+     color:#fff;
+     border-radius:5px;
+     box-shadow:0 0 5px #03e9f4,
+     0 0 25px #03e9f4,
+     0 0 50px #03e9f4,
+     0 0 100px #03e9f4;
   }
   .__gmt-button > div label > span {
     margin-left: 6px;
@@ -1094,7 +1105,7 @@ try {
     padding-right: 8px;
     margin-left: 8px;
     margin-right: -8px;
-    background: #F9850A;
+    background: #0af985;
     margin-top: 4px;
     margin-bottom: 0px;
     max-height: 400px;
@@ -1105,6 +1116,7 @@ try {
     position: relative;
     margin-top: 12px;
     margin-bottom: 12px;
+    color:white;
   }
   .__gmt-button > div > ul > li > svg.copy {
     cursor: pointer;
@@ -1145,7 +1157,7 @@ try {
     document.body.append(STYLE);
 
     const SVG_COPY = {
-      viewBoxWidth: 448,
+      viewBoxWidth: ,
       viewBoxHeight: 512,
       pathD: 'M432 192h-16v-82.75c0-8.49-3.37-16.62-9.37-22.63L329.37 9.37c-6-6-14.14-9.37-22.63-9.37H126.48C109.64 0 96 14.33 96 32v160H80c-44.18 0-80 35.82-80 80v96c0 8.84 7.16 16 16 16h480c8.84 0 16-7.16 16-16v-96c0-44.18-35.82-80-80-80zM320 45.25L370.75 96H320V45.25zM128.12 32H288v64c0 17.67 14.33 32 32 32h64v64H128.02l.1-160zM480 352H32v-80c0-26.47 21.53-48 48-48h352c26.47 0 48 21.53 48 48v80zm-80-88c-13.25 0-24 10.74-24 24 0 13.25 10.75 24 24 24s24-10.75 24-24c0-13.26-10.75-24-24-24zM48 504c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-88H48v88zm96 0c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-88h-32v88zm96 0c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-88h-32v88zm96 0c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-88h-32v88zm96 0c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-88h-32v88z',
     };
