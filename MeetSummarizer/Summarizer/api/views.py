@@ -52,4 +52,5 @@ def createMeet(request):
     serializer = MeetContentSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
+        print("Meet Saved in Database")
     return Response(serializer.data)

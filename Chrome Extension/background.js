@@ -25,7 +25,7 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
             summary: ''
         };
 
-        fetch('http://meetdigest.herokuapp.com/api/current_user/', {
+        fetch('http://localhost:8000/api/current_user/', {
             headers: {
                 Authorization: `JWT ${localStorage.getItem('token')}`
             }
@@ -46,7 +46,7 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
                     console.log("final postData obj background.js", postData);
 
                     // Send Post Request to REST API
-                    fetch('http://meetdigest.herokuapp.com/api/createMeet', {
+                    fetch('http://localhost:8000/api/createMeet', {
                         method: 'POST',
                         headers: {
                             'Content-Type': "application/json",
@@ -56,6 +56,7 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
                     })
                         .then(res => { return (res.json()); })
                         .then(req2 => {
+                            console.log("background.js req2 ",req2);
                         });
                 }
             });
