@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Dashboard from './components/Dashboard/Dashboard';
+import Footer1 from './components/Footer/Footer1';
 
 function App() {
   // DECLARE LOGIN STATE FOR APP
@@ -37,7 +38,7 @@ function App() {
             <Navbar userState={state} manageState={setState}/>
             <Login userState={state} manageState={setState}/>
             <br/>
-            <Footer/>
+            <Footer1/>
         </Route>
         <Route exact path ="/contactus">
             <Navbar userState={state} manageState={setState}/>

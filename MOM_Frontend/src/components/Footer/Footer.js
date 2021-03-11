@@ -10,7 +10,7 @@ function footer() {
 <footer className="page-footer middleColor  font-small unique-color-dark">
 
   <div className="footer-copyright text-center py-3 copyrightColor white">
-    Copyright © 2020 Meet Digest
+    Copyright © 2020 MOM
   </div>
 
 </footer>

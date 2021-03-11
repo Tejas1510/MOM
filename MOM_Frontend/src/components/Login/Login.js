@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './style.css'
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../../node_modules/font-awesome/css/font-awesome.min.css'
 import { useHistory } from "react-router-dom";
 
 function Login(props) {
@@ -60,6 +62,11 @@ function Login(props) {
                 localStorage.setItem('token', json.token);
                 props.manageState({ logged_in: true, email: json.user.email, name: json.user.name});
                 history.push("/dashboard");
+                return(
+                    <div className="alert alert-success" role="alert">
+                        Sign Up Succesful
+                    </div>
+                )
             });
     }
 
@@ -85,7 +92,13 @@ function Login(props) {
                 console.log("Signup form json.user", json.user);
                 localStorage.setItem('token', json.token);
                 props.manageState({ logged_in: true, email: json.email, name: json.name});
+
                 history.push("/dashboard");
+                return(
+                    <div className="alert alert-success" role="alert">
+                        Sign Up Succesful
+                    </div>
+                )
             });
     }
 

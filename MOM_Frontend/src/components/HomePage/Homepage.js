@@ -8,11 +8,18 @@ import headerImage from '../../assets/img/headerImage.svg'
 import GoogleMeet from '../../assets/img/googlemeet.png'
 import FeatureZoom from '../../assets/img/featureZoom.png'
 import FeatureImage2 from '../../assets/img/featureImage2.svg'
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import Step1 from '../../assets/img/step1.png'
 import Step2 from '../../assets/img/step2.svg'
 import Step3 from '../../assets/img/step3.svg'
 import Step4 from '../../assets/img/step4.png'
 import Step5 from '../../assets/img/step5.svg'
+import Tejas from '../../assets/img/tejas.png'
+import Ayush from '../../assets/img/ayush.jpg'
+import YashTelkhade from '../../assets/img/yashtelkhade.jpg'
+import YashAgrawal from '../../assets/img/yashAgrawal.jpeg'
+import Atul from '../../assets/img/atul.jpg'
 
 function Homepage() {
     return (
@@ -64,7 +71,9 @@ function Homepage() {
                       <p>Stay connected to your conversation. Get real-time action items extracted. Grab insights automatically on the fly. Enjoy a live transcript and skyrocket the productivity.</p>
                   </div>
                   <div className="col-sm-6 col-12">
-                    
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wGXI0KpkR50" allowfullscreen></iframe>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -125,6 +134,70 @@ function Homepage() {
                 </div>
               </div>
             </section>
+
+            <section>
+            <div className="container-fluid my-1">
+              <div className="row " >
+                  <div className="col-12">
+                      <h2 className="text-center featureHeading mb-1" style={{fontSize:'38px'}}>OUR <span style={{color:' #ff5a6e'}}>TEAM</span></h2>
+                  </div>
+                  <div className="col-12 mb-3">
+                    <p className="teamHeading" style={{textAlign:'center'}}>Meet the Team of Awesome and Creative Individuals behind the Product</p>
+                  </div>
+                  <div className="col-md-2 my-2 ml-5 text-center"  >
+                      <img className="bd-placeholder-img rounded-circle" width="140" height="140"
+                          src={Atul}></img>
+                      <h3 className="pt-3">Atul Thakre</h3>
+                      <p>Backend Developer</p>
+                      <a href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
+                      <a  href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
+                      {/* <LinkedInIcon color="primary" fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/"  ></a></LinkedInIcon>    <GitHubIcon fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"> </a></GitHubIcon> */}
+                  </div>
+
+                  <div className="col-md-2 my-2 ml-5 text-center" >
+                      <img className="bd-placeholder-img rounded-circle" width="140" height="140"
+                          src={YashAgrawal}></img>
+                      <h3 className="pt-3">Yash Agrawal</h3>
+                    
+                      <p>Frontend Developer</p>
+                      <a href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
+                      <a  href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
+                      {/* <LinkedInIcon color="primary" fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"></a></LinkedInIcon>    <GitHubIcon fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"> </a></GitHubIcon> */}
+                  </div>
+
+                  <div className="col-md-2 my-2 ml-4 text-center" >
+                      <img className="bd-placeholder-img rounded-circle" width="140" height="140"
+                          src={Tejas}></img>
+                      <h3 className="pt-3">Tejas Tapas</h3>
+                      
+                      <p>Frontend Developer</p>
+                      <a href="https://www.linkedin.com/in/tejas-sudhir-tapas-971847171/" target="_blank" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
+                      <a  href="https://github.com/Tejas1510" role="button" target="_blank" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
+                      {/* <LinkedInIcon color="primary" fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"></a></LinkedInIcon>    <GitHubIcon fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"> </a></GitHubIcon> */}
+                  </div>
+
+                  <div className="col-md-2 my-2 ml-4 text-center">
+                      <img className="bd-placeholder-img rounded-circle" width="140" height="140"
+                          src={YashTelkhade}></img>
+                      <h3 className="pt-3">Yash Telkhade</h3>
+                      
+                      <p>Tester</p>
+                      <a href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
+                      <a  href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
+                  </div>
+                  <div className="col-md-2 my-2 ml-4 text-center">
+                      <img className="bd-placeholder-img rounded-circle" width="140" height="140"
+                          src={Ayush}></img>
+                      <h3 className="pt-3">Ayush Kedia</h3>
+                     
+                      <p>Tester</p>
+                      <a href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
+                      <a  href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
+                      {/* <LinkedInIcon color="primary" fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"></a></LinkedInIcon>    <GitHubIcon fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"> </a></GitHubIcon>  */}
+                  </div>
+               </div>
+            </div>
+          </section>
         <main id="main">
     
         {/* Team Section Ends */}
