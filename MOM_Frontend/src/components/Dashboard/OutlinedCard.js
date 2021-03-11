@@ -17,8 +17,8 @@ import Form from 'react-bootstrap/Form'
 const useStyles = makeStyles({
   root: {
     minWidth: 240,
-    maxWidth: 240,
-    maxHeight: 200,
+    maxWidth: 270,
+    maxHeight: 250,
     margin: 10
   },
   bullet: {
@@ -91,17 +91,23 @@ function MyModal(props) {
     </Modal>
   );
 }
+
+const timestampConverter = (inpTime) => {
+  let dateUTC = new Date(inpTime);
+  return(dateUTC.toString());
+}
+
 export default function OutlinedCard(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
   const [modalShow, setModalShow] = React.useState(false);
   return (
-    <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap'}}>
-    <Card className={classes.root} style={{backgroundColor: "white",borderRight:"6px solid violet", boxShadow:" 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.10)"}}>
+    <div style={{display:'inline-block', float: 'left'}}>
+    <Card className={classes.root} style={{backgroundColor: "white",borderRight:"6px solid rgb(63,81,181)", boxShadow:" 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.10)"}}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-        Date: {props.meet.date.substring(0,10)}<br></br>
-        Time: {props.meet.date.substring(11,19)}
+        Date: {props.meet.date ? timestampConverter(props.meet.date).substring(0,15) : null}<br></br>
+        Time: {props.meet.date ? timestampConverter(props.meet.date).substring(16,21) : null}
         </Typography>
         <Typography variant="h5" component="h2">
           {props.meet.title} 
@@ -120,6 +126,7 @@ export default function OutlinedCard(props) {
         <Button
           variant="contained"
           color="primary"
+          style={{margin: '10px'}}
           className={classes.button}
           endIcon={<SendIcon/>}
           onClick={() => setModalShow(true)}

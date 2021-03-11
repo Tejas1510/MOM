@@ -1,6 +1,4 @@
-.footerColor{
-    background-color: #6351ce;
-  }
+
   .footerTitle{
     color: white;
   }
@@ -16,15 +14,5 @@
   }
   .white{
       color: white;
-  }
-  h6{
-      color: #fff;
-  }
-  a{
-      color: white;
-      text-decoration: none;
-  }
-
-  a:hover{
-    text-decoration: none;
+      cursor: pointer;
   }

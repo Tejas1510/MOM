@@ -46,29 +46,29 @@ class Navbar extends React.Component {
         //     return(null);
         return (
             <div>
-                <nav className="navbar navbar-dark navbar-expand-sm bg-primary  fixed-top">
+                <nav className="navbar navbar-dark navbar-expand-sm navBackground  fixed-top">
                     <div className="container">
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <a className="navbar-brand" >MOM</a>
+                        <a className="navbar-brand" >Meet Digest</a>
                         <div className="collapse navbar-collapse" id="Navbar">
                             <ul className="navbar-nav ml-auto">
-                                <li className="nav-item mr-2"><NavLink className="nav-link active" to="/" > Home</NavLink></li>
+                                <li className="nav-item mr-2"><NavLink className="nav-link" to="/" >Home</NavLink></li>
                                 <li className="nav-item mr-2"><NavLink className="nav-link" to="/aboutus" >About Us</NavLink></li>
-                                <li className="nav-item mr-2"><NavLink className="nav-link" to="/contactus" > Contact </NavLink></li>
+                                <li className="nav-item mr-2"><NavLink className="nav-link" to="/contactus" >Contact</NavLink></li>
                                 {
                                     this.props.userState.logged_in
                                         ?
-                                        <li className="nav-item mr-2"><NavLink className="nav-link" to="/dashboard" > {this.props.userState.name}</NavLink></li>
+                                        <li className="nav-item mr-2"><NavLink className="nav-link" to="/dashboard" >{this.props.userState.name}</NavLink></li>
                                         :
-                                        <li className="nav-item mr-2"><NavLink className="nav-link" to="/login" > Login</NavLink></li>
+                                        <li className="nav-item mr-2"><NavLink className="nav-link" to="/login" >Login</NavLink></li>
                                 }
 
                                 {
                                     this.props.userState.logged_in
                                         ?
-                                        <li className="nav-item mr-2"><a className="nav-link" href="" onClick={this.logoutHandler}> Logout</a></li>
+                                        <li className="nav-item mr-2"><a className="nav-link" href="" onClick={this.logoutHandler}>Logout</a></li>
                                         :
                                         null
                                 }

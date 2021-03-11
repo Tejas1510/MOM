@@ -91,10 +91,11 @@ function Sidebar(props) {
       <List >
         <ListItem>
           <Chip
-            avatar={<Avatar>{props.name.charAt(0).toUpperCase()}</Avatar>}
+            avatar={<Avatar style={{fontSize: 'large'}}>{props.name.charAt(0).toUpperCase()}</Avatar>}
             label={props.name}
             clickable
             color="secondary"
+            style={{fontSize:'large'}}
           />
         </ListItem>
 

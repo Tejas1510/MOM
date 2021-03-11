@@ -11,6 +11,10 @@
     margin-top: 100px;
 }
 
+.navBarColor{
+    color: rgb(63,81,181);
+}
+
 .startNow{
     background-color: deepskyblue;
     /* border: 1px solid #fff; */
