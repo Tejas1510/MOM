@@ -891,6 +891,30 @@ try {
           id: transcriptId,
           content: transcriptContent
         }});
+
+        // Create Notification For Saved Transcript
+        let meetSentNotification = document.createElement('div');
+        meetSentNotification.style.position = 'absolute';
+        meetSentNotification.style.top = '20px';
+        meetSentNotification.style.left = '20px';
+        meetSentNotification.style.zIndex = '10';
+        meetSentNotification.style.backgroundColor = 'mediumseagreen';
+        meetSentNotification.style.color = 'white';
+        meetSentNotification.style.padding = '10px';
+        meetSentNotification.style.borderRadius = '5px';
+        meetSentNotification.style.border = '2px solid white';
+        meetSentNotification.style.fontSize = 'large';
+
+        let sentMessage = document.createTextNode ('Meet Transcript Saved');
+        meetSentNotification.appendChild(sentMessage);
+        document.body.appendChild(meetSentNotification);
+
+        //console.log(meetSentNotification);
+
+        // Remove the notification after 3 sec
+        setTimeout(() => {
+          document.body.removeChild(meetSentNotification);
+        }, 3000);
         
       }
 
