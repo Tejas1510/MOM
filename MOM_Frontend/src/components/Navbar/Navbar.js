@@ -51,7 +51,7 @@ class Navbar extends React.Component {
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <a className="navbar-brand" >MOM</a>
+                        <a className="navbar-brand" >Meet Digest</a>
                         <div className="collapse navbar-collapse" id="Navbar">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item mr-2"><NavLink className="nav-link" to="/" >Home</NavLink></li>

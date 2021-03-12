@@ -37,12 +37,17 @@ class UserList(APIView):
 def getMeet(request):
     email = str(request.data['email'])
     print("Email: ", email)
-    meets = MeetContent.objects.filter(owner=email)
+    meets = MeetContent.objects.filter(owner=email).order_by('-date')
     serializer = MeetContentSerializer(meets, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
 def apiOverview(request):
+    # Uncomment Below Code to Programatically create meet content data for testing
+    # for i in range(1,16):
+    #     newMeet = MeetContent(owner='tejas@gmail.com', hostname='Tejas', title='Tejas Meet ' + str(i), duration=str(i*10), transcript='Meet Transcript ' + str(i), summary='Meet Summary ' + str(i))
+    #     newMeet.save()
+    #     print("newMeet: ", str(newMeet))
     meets = MeetContent.objects.all()
     serializer = MeetContentSerializer(meets, many=True)
     return Response(serializer.data)

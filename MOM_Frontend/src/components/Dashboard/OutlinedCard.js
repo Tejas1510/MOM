@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Tooltip } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import Chip from '@material-ui/core/Chip';
 import FaceIcon from '@material-ui/icons/Face';
@@ -82,7 +83,11 @@ function MyModal(props) {
       </Modal.Header>
       <Modal.Body style={{'maxHeight': 'calc(100vh - 210px)', 'overflowY': 'auto'}}>
         <p ref={ref}>
-         {props.summary}  
+          Tarnscript: &nbsp; {props.transcript}
+
+          <br/><br/>
+
+          Summary: &nbsp; {props.summary}  
         </p> 
       
       </Modal.Body>
@@ -109,18 +114,17 @@ export default function OutlinedCard(props) {
         Date: {props.meet.date ? timestampConverter(props.meet.date).substring(0,15) : null}<br></br>
         Time: {props.meet.date ? timestampConverter(props.meet.date).substring(16,21) : null}
         </Typography>
-        <Typography variant="h5" component="h2">
-          {props.meet.title} 
-        </Typography>
+        <Tooltip title={props.meet.title} aria-label={props.meet.title}>
+          <Typography variant="h5" component="h2" style={{cursor:'pointer'}}>
+            {props.meet.title.length <= 15 ? props.meet.title : props.meet.title.substring(0,15) + '....'} 
+          </Typography>
+        </Tooltip>
         <Chip
         icon={<FaceIcon />}
         label={props.meet.hostname}
         clickable
         color="secondary"
       />
-        {/* <Typography variant="body2" component="p">
-        {props.meet.transcript}
-        </Typography> */}
       </CardContent>
       <CardActions>
         <Button
@@ -136,6 +140,7 @@ export default function OutlinedCard(props) {
         <MyModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        transcript={props.meet.transcript}
         summary={props.meet.summary}
         title={props.meet.title}
       />

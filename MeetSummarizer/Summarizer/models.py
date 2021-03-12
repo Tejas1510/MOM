@@ -83,13 +83,14 @@ class User(AbstractBaseUser):
         return self.active
 
 class MeetContent(models.Model):
+    meet_id = models.AutoField(primary_key=True)
     owner = models.CharField(max_length=200, default='', blank=True)
     date = models.DateTimeField(auto_now_add=True, blank=True) 
     hostname = models.CharField(max_length=200, default='', blank=True)
     title = models.CharField(max_length=200, default='', blank=True)
     duration = models.CharField(max_length=20, default='', blank=True)
-    transcript = models.CharField(max_length=10000, default='', blank=True)
-    summary = models.CharField(max_length=10000, default='', blank=True)
+    transcript = models.TextField(default='', blank=True)
+    summary = models.TextField(default='', blank=True)
 
     def __str__(self):
         return self.title
