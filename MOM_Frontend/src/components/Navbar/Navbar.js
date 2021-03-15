@@ -3,6 +3,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.bundle";
 import './style.css'
 import { NavLink } from 'react-router-dom';
+import logo from '../Dashboard/Meet Digest.png';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class Navbar extends React.Component {
         let token = localStorage.getItem('token');
         console.log('Navbar.js: token from localstorage',token);
         if (token) {
-            fetch('http://localhost:8000/api/current_user/', {
+            fetch('https://meetdigest.herokuapp.com/api/current_user/', {
                 headers: {
                     Authorization: `JWT ${localStorage.getItem('token')}`
                 }
@@ -51,6 +52,7 @@ class Navbar extends React.Component {
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                             <span className="navbar-toggler-icon"></span>
                         </button>
+                        <img src={logo} width="5%" style={{marginRight: '15px'}}/>
                         <a className="navbar-brand" >Meet Digest</a>
                         <div className="collapse navbar-collapse" id="Navbar">
                             <ul className="navbar-nav ml-auto">

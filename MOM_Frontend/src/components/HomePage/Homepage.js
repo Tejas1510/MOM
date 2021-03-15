@@ -31,7 +31,7 @@ function Homepage() {
                       <Fade left>
                         <h2 className="heading" ><span className="navBarColor" >Automated</span> MEETING NOTES FOR IN-PERSON AND REMOTE CONVERSATIONS</h2>
                         </Fade>  
-                        <p>We back you up with automated meeting minutes in every conversation. Meet Digest saves you time in board meetings, team management, and customer support.</p>
+                        <p>We back you up with automated meeting minutes in every conversation. Meet Digest saves your time in board meetings, team management, and customer support.</p>
                         <p>Focus on the conversation, we'll do the rest automatically.</p>
                     </div>
 
@@ -58,8 +58,8 @@ function Homepage() {
                     <img className="img-fluid featureImage" src={FeatureImage2}></img>
                   </div>
                   <div className="col-sm-6 col-12">
-                      <h2 className="featureHeading"><span className="Empasized">CREATE & INOVATE</span></h2>
-                      <h2 className="featureHeading">Leave the hassle to AI</h2>
+                      <h2 className="featureHeading"><span className="Empasized">CREATE & INNOVATE</span></h2>
+                      <h2 className="featureHeading">Leave the hassle to ML</h2>
 
                       <p>Your time, your mind, and your experience is unique and precious! In order to succeed, you must <strong>focus</strong> on what matters.</p>
                       <p>That's why Meet Digest created a smart solution for Automated Meeting Minutes, converting conversations into actions, <strong>empowering</strong> your skills, and saving hours of your time.</p>
@@ -72,7 +72,7 @@ function Homepage() {
                   </div>
                   <div className="col-sm-6 col-12">
                   <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wGXI0KpkR50" allowfullscreen></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OsNezPOUU84" allowfullscreen></iframe>
                   </div>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ function Homepage() {
                 <div className="row workFlowRow">
                   <div className="col-sm-6 col-12">
                     <h2 className="featureHeading"><span className="Empasized">Add Chrome Extension</span></h2>
-                    <p>Add our chrome extension to your favourite video conference system like google meet, Zoom, Cisco Webex and enjoy the power of AI and NLP.</p>
+                    <p>Add our chrome extension to your google meet and enjoy the power of ML and NLP.</p>
                   </div>
                   <div className="col-sm-6 col-12">
                     <img src={Step1} className="img-fluid" alt='homepage'></img>
@@ -102,13 +102,13 @@ function Homepage() {
                   </div>
                   <div className="col-sm-6 col-12">
                     <h2 className="featureHeading"><span className="Empasized">Record</span></h2>
-                    <p>Add Meet Digest as a meeting attendee and you are ready to go. Meet Digest will join your conversation as a smart AI-powered meeting assistant. Just push the record button on the app and </p>
+                    <p>Add Meet Digest as a meeting attendee and you are ready to go. Meet Digest will join your conversation as a smart ML-powered meeting assistant. Just push the record button on the app and it will start transcription</p>
                   </div>
                 </div>
                 <div className="row workFlowRow">
                   <div className="col-sm-6 col-12">
-                    <h2 className="featureHeading"><span className="Empasized">Provide Transcribe</span></h2>
-                    <p><strong>Meet Digest</strong> transcribes your conversations on the fly.  Meet Digest will generate a transcript <strong>enriched</strong> with speaker identification and voice separation, allowing you to <strong>understand</strong> exactly who said what.</p>                  </div>
+                    <h2 className="featureHeading"><span className="Empasized">Transcription and Summarization</span></h2>
+                    <p><strong>Meet Digest</strong> transcribes and summarizes your conversations on the fly.  Meet Digest will generate a transcript and summary <strong>enriched</strong> with speaker identification and voice separation, allowing you to <strong>understand</strong> exactly who said what.</p>                  </div>
                   <div className="col-sm-6 col-12">
                     <img src={Step3} className="img-fluid" alt='homepage'></img>
                   </div>
@@ -119,14 +119,13 @@ function Homepage() {
                   </div>
                   <div className="col-sm-6 col-12">
                     <h2 className="featureHeading"><span className="Empasized">Translation</span></h2>
-                    <p>We Provide Transcribe of the meeting in more than 12 languages used accross the globe this connecting individuals from various background.</p>
+                    <p>We Provide Transcript and Summary of the meeting in multiple languages to connect individuals from various background.</p>
                   </div>
                 </div>
                 <div className="row workFlowRow">
                   <div className="col-sm-6 col-12">
-                    <h2 className="featureHeading"><span className="Empasized">Colaboration</span></h2>
-                    <h4><b>Convert Converation into Actions</b></h4>
-                    <p>From now on there is a <strong>platform</strong> for all your meetings and conversations. It's like having a remember-all-the-action-items and never-miss-the-follow-ups <strong>SUPERPOWER</strong> to better manage meetings, focus on the things that matter, and free up time for <strong>yourself</strong>.</p>
+                    <h2 className="featureHeading"><span className="Empasized">Conversation To Action</span></h2>
+                    <p>From now on there is a <strong>platform</strong> for all your meetings and conversations. It's like having a 'remember all the action items' and 'never miss the follow ups' <strong>SUPERPOWER</strong> to better manage meetings, focus on the things that matter, and free up time for <strong>yourself</strong>.</p>
                   </div>
                   <div className="col-sm-6 col-12">
                     <img src={Step5} className="img-fluid" alt='homepage'></img>
@@ -149,8 +148,8 @@ function Homepage() {
                           src={Atul}></img>
                       <h3 className="pt-3">Atul Thakre</h3>
                       <p>Backend Developer</p>
-                      <a href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
-                      <a  href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
+                      <a href="https://www.linkedin.com/in/arthakre/" target="_blank" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
+                      <a  href="https://github.com/atulthakre00" target="_blank" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
                       {/* <LinkedInIcon color="primary" fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/"  ></a></LinkedInIcon>    <GitHubIcon fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"> </a></GitHubIcon> */}
                   </div>
 
@@ -160,8 +159,8 @@ function Homepage() {
                       <h3 className="pt-3">Yash Agrawal</h3>
                     
                       <p>Frontend Developer</p>
-                      <a href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
-                      <a  href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
+                      <a href="https://www.linkedin.com/in/yash-agrawal-90b05217a" target="_blank" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
+                      <a  href="https://github.com/1706-yash" role="button" target="_blank" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
                       {/* <LinkedInIcon color="primary" fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"></a></LinkedInIcon>    <GitHubIcon fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"> </a></GitHubIcon> */}
                   </div>
 
@@ -181,19 +180,18 @@ function Homepage() {
                           src={YashTelkhade}></img>
                       <h3 className="pt-3">Yash Telkhade</h3>
                       
-                      <p>Tester</p>
-                      <a href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
-                      <a  href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
+                      <p>Tester & Chrome Extension Developer</p>
+                      <a href="https://www.linkedin.com/in/yash-telkhade" target="_blank" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
+                      <a  href="https://github.com/YashTelkhade" target="_blank" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
                   </div>
                   <div className="col-md-2 my-2 ml-4 text-center">
                       <img className="bd-placeholder-img rounded-circle" width="140" height="140"
                           src={Ayush}></img>
                       <h3 className="pt-3">Ayush Kedia</h3>
                      
-                      <p>Tester</p>
-                      <a href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
-                      <a  href="https://www.linkedin.com/in/arthakre/" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
-                      {/* <LinkedInIcon color="primary" fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"></a></LinkedInIcon>    <GitHubIcon fontSize="large"><a  href="https://www.linkedin.com/in/arthakre/" role="button"> </a></GitHubIcon>  */}
+                      <p>Tester & Chrome Extension Developer</p>
+                      <a href="https://www.linkedin.com/in/ayush-kedia-9a1475188" target="_blank" role="button" style={{textDecoration:'none'}} ><LinkedInIcon color="primary" fontSize="large"></LinkedInIcon></a>   
+                      <a  href="https://github.com/AyushKedia" target="_blank" role="button" style={{textDecoration:'none',textDecorationColor:'black'}}  >  <GitHubIcon fontSize="large"></GitHubIcon></a>
                   </div>
                </div>
             </div>

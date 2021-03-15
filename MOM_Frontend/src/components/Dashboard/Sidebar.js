@@ -199,11 +199,11 @@ function Sidebar(props) {
 
       <main className={classes.content}>
         <div className={classes.toolbar} />
-
+        {props.children}
         {
-
-          props.meetL.map((meet, index) => <Card key={index} meet={meet}></Card>)
+          props.meetL.map((meet, index) => <Card key={index} meet={meet}></Card>)          
         }
+        
 
       </main>
     </div>

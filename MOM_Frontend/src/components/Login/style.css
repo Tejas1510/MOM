@@ -51,10 +51,12 @@
 }
 
 .buttonLink{
+	border: none;
+	outline: none;
 	background-color: #ccc;
 	display: inline-block;
 	color: black;	
-	padding: 15px 40px;
+	padding: 10px 30px;
 	border-radius: 10px;
 	cursor: pointer;
 	font-weight: bold;
@@ -72,5 +74,7 @@
 
 .infoBox{
 	color: white;
-	padding: 10px 30px;
+	padding: 0 0 10px 0;
+	text-align: center;
+	cursor: pointer;
 }
