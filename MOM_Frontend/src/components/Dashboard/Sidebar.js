@@ -74,7 +74,7 @@ function Sidebar(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const history = useHistory();
 
-  console.log(props)
+  //console.log(props)
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -140,8 +140,8 @@ function Sidebar(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
-  console.log('hello');
-  console.log(typeof props.meetL)
+  //console.log('hello');
+  //console.log(typeof props.meetL)
   return (
     <div className={classes.root}>
       <CssBaseline />

@@ -14,13 +14,13 @@ class Navbar extends React.Component {
 
     logoutHandler = () => {
         localStorage.removeItem('token');
-        console.log('Handle Logout Called');
+        //console.log('Handle Logout Called');
         this.props.manageState({ logged_in: false, email: '' , name: ''});
     }
 
     componentDidMount() {
         let token = localStorage.getItem('token');
-        console.log('Navbar.js: token from localstorage',token);
+        //console.log('Navbar.js: token from localstorage',token);
         if (token) {
             fetch('https://meetdigest.herokuapp.com/api/current_user/', {
                 headers: {

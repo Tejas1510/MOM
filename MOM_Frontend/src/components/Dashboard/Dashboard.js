@@ -14,7 +14,7 @@ class Dashboard extends Component {
 
     getMeet = () => {
         let token = localStorage.getItem('token');
-        console.log("token", token);
+        //console.log("token", token);
         if (token) {
             trackPromise(
                 fetch('https://meetdigest.herokuapp.com/api/current_user/', {
@@ -41,12 +41,12 @@ class Dashboard extends Component {
                             })
                                 .then(res => res.json())
                                 .then(req2 => {
-                                    console.log("getMeet", req2);
+                                    //console.log("getMeet", req2);
                                     let dashboardContent = [];
                                     req2.forEach(element => {
                                         dashboardContent.push(element);
                                     });
-                                    console.log("dashboardContent", dashboardContent);
+                                    //console.log("dashboardContent", dashboardContent);
                                     this.setState({ meetList: dashboardContent });
                                     return (dashboardContent);
                                 });
@@ -58,7 +58,7 @@ class Dashboard extends Component {
 
     logoutHandler = () => {
         localStorage.removeItem('token');
-        console.log('Handle Logout Called');
+        //console.log('Handle Logout Called');
         this.props.manageState({ logged_in: false, email: '', name: '' });
     }
 

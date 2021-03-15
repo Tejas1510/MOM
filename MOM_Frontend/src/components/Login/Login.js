@@ -50,7 +50,7 @@ function Login(props) {
             'email': state.signInEmail,
             'password': state.signInPassword
         };
-        console.log("Sign In, formData", formData);
+        //console.log("Sign In, formData", formData);
         trackPromise(
             fetch('https://meetdigest.herokuapp.com/token-auth/', {
                 method: 'POST',
@@ -60,9 +60,9 @@ function Login(props) {
                 body: JSON.stringify(formData)
             })
                 .then(res => {
-                    console.log(res);
+                    //console.log(res);
                     if (res.status !== 200) {
-                        console.log("Login Error");
+                        //console.log("Login Error");
                         setState({ ...state, infoContent: 'Incorrect Login Credentials' });
                         return null;
                     }
@@ -71,8 +71,8 @@ function Login(props) {
                 .then(json => {
                     if (json === null)
                         return;
-                    console.log("Login form json", json);
-                    console.log("Login form json.user", json.user);
+                    //console.log("Login form json", json);
+                    //console.log("Login form json.user", json.user);
                     localStorage.setItem('token', json.token);
                     props.manageState({ logged_in: true, email: json.user.email, name: json.user.name });
                     history.push("/dashboard");
@@ -94,10 +94,10 @@ function Login(props) {
             'password': state.signUpPassword1,
             //'password2': state.signUpPassword2
         };
-        console.log("Sign Up, formData", formData);
+        //console.log("Sign Up, formData", formData);
 
         if (state.signUpPassword1 !== state.signUpPassword2) {
-            console.log(state);
+            //console.log(state);
             setState({ ...state, infoContent: 'Passwords Do Not Match' });
             return;
         }
@@ -111,9 +111,9 @@ function Login(props) {
                 body: JSON.stringify(formData)
             })
                 .then(res => {
-                    console.log("signup response", res);
+                    //console.log("signup response", res);
                     if (res.status !== 201) {
-                        console.log("Signup Error");
+                        //console.log("Signup Error");
                         setState({ ...state, infoContent: 'Incorrect Signup Credentials' });
                         return null;
                     }
@@ -122,8 +122,8 @@ function Login(props) {
                 .then(json => {
                     if (json === null)
                         return;
-                    console.log("Signup form json", json);
-                    console.log("Signup form json.user", json.user);
+                    //console.log("Signup form json", json);
+                    //console.log("Signup form json.user", json.user);
                     localStorage.setItem('token', json.token);
                     props.manageState({ logged_in: true, email: json.email, name: json.name });
 
