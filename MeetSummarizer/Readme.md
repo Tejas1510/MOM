@@ -36,7 +36,7 @@ python manage.py createsuperuser
 ```
 pip install django-cors-headers
 pip install djangorestframework
-pip install djangorestframework-jwt-1.11.0
+pip install djangorestframework-jwt-1.11.0 ( If this dosen't work then run pip install djangorestframework-jwt)
 ```
    username: Project2021
    password: Project@2021
