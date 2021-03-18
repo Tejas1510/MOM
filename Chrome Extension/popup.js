@@ -13,7 +13,7 @@ console.log('token from popup.js : ', localStorage.getItem('token'));
 updateState = () => {
     let token = localStorage.getItem('token');
     if (token !== null && token !== undefined) {
-        fetch('http://localhost:8000/api/current_user/', {
+        fetch('https://meetdigest.herokuapp.com/api/current_user/', {
             headers: {
                 Authorization: `JWT ${token}`
             }
@@ -28,7 +28,7 @@ updateState = () => {
                     extensionState.loggedIn = false;
                     extensionState.email = '';
                     extensionState.name = '';
-                    loginContainerContent = ' <a href="http://localhost:3000/login" target="_blank">Login</a> ';
+                    loginContainerContent = ' <a href="https://meetdigest.netlify.app/login" target="_blank">Login</a> ';
                 }
                 else {
                     // If token is correct
@@ -36,7 +36,7 @@ updateState = () => {
                     extensionState.email = json.email;
                     extensionState.name = json.name;
                     loginContainerContent = `<p> Logged In as: ${extensionState.email} (${extensionState.name}) </p>`;
-                    loginContainerContent += `<p> <a href="http://localhost:3000/dashboard" target="_blank">View Dashboard</a> </p>`;
+                    loginContainerContent += `<p> <a href="https://meetdigest.netlify.app/dashboard" target="_blank">View Dashboard</a> </p>`;
                 }
                 console.log("updateState called ", extensionState);
                 if (oldContainerContent != loginContainerContent) {
@@ -56,7 +56,7 @@ updateState = () => {
         extensionState.loggedIn = false;
         extensionState.email = '';
         extensionState.name = '';
-        loginContainerContent = ' <a href="http://localhost:3000/login" target="_blank">Login</a> ';
+        loginContainerContent = ' <a href="https://meetdigest.netlify.app/login" target="_blank">Login</a> ';
         loginContainer.innerHTML = loginContainerContent;
     }
 }

@@ -16,7 +16,7 @@
     "all_frames": false
   }, 
   {
-    "matches": ["http://localhost:3000/*", "http://127.0.0.1:3000/*"],
+    "matches": ["https://meetdigest.netlify.app/*", "https://www.meetdigest.netlify.app/*"],
     "js": ["loginContentScript.js"],
     "run_at": "document_idle",
     "all_frames": false

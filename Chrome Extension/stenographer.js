@@ -1,5 +1,47 @@
 console.log('[google-meet-transcripts] loaded');
 
+const createFlashMessage = (displayMessage) => {
+  // Create Notification For Saved Transcript
+  let preObj = document.getElementById('flashMeassage');
+  console.log(preObj);
+  if(preObj !== null){
+    document.body.removeChild(preObj);
+  }
+
+  let meetSentNotification = document.createElement('div');
+  meetSentNotification.setAttribute("id", "flashMeassage");
+  meetSentNotification.style.position = 'absolute';
+  meetSentNotification.style.top = '20px';
+  meetSentNotification.style.left = '20px';
+  meetSentNotification.style.zIndex = '10';
+  meetSentNotification.style.backgroundColor = 'mediumseagreen';
+  meetSentNotification.style.color = 'white';
+  meetSentNotification.style.padding = '10px';
+  meetSentNotification.style.borderRadius = '5px';
+  meetSentNotification.style.border = '2px solid white';
+  meetSentNotification.style.fontSize = 'large';
+
+  //let sentMessage = document.createTextNode(displayMessage);
+  meetSentNotification.innerHTML = displayMessage;
+  document.body.appendChild(meetSentNotification);
+
+  //console.log(meetSentNotification);
+
+  // Remove the notification after 3 sec
+  setTimeout(() => {
+    try{
+    document.body.removeChild(meetSentNotification);
+    }
+    catch{
+      // no need to do anything
+    }
+  }, 2500);
+}
+
+const welcomeMessage = 'Click on <svg viewBox="0 0 512 512" id="__gmt-icon" style="width: 24px; height: 24px;" class=""><path d="M432 192h-16v-82.75c0-8.49-3.37-16.62-9.37-22.63L329.37 9.37c-6-6-14.14-9.37-22.63-9.37H126.48C109.64 0 96 14.33 96 32v160H80c-44.18 0-80 35.82-80 80v96c0 8.84 7.16 16 16 16h480c8.84 0 16-7.16 16-16v-96c0-44.18-35.82-80-80-80zM320 45.25L370.75 96H320V45.25zM128.12 32H288v64c0 17.67 14.33 32 32 32h64v64H128.02l.1-160zM480 352H32v-80c0-26.47 21.53-48 48-48h352c26.47 0 48 21.53 48 48v80zm-80-88c-13.25 0-24 10.74-24 24 0 13.25 10.75 24 24 24s24-10.75 24-24c0-13.26-10.75-24-24-24zM48 504c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-88H48v88zm96 0c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-88h-32v88zm96 0c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-88h-32v88zm96 0c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-88h-32v88zm96 0c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-88h-32v88z" class=""></path></svg> To Start Transcribing.'
+
+
+
 try {
 
   ; (() => {
@@ -253,6 +295,32 @@ try {
     };
 
 
+    const addTranscriptionMessage = () => {
+      console.log("addTranscriptionMessage");
+      var transcribeOn = document.createElement("div");
+      transcribeOn.innerHTML = "Transciption is going on";
+      transcribeOn.style.padding = "5px";
+      transcribeOn.style.background = "red";
+      transcribeOn.style.color = "white";
+      transcribeOn.style.zIndex = "10";
+      transcribeOn.style.position = "relative";
+      transcribeOn.style.left = "77%";
+      transcribeOn.style.alignContent = "center";
+      transcribeOn.style.fontSize = "20px";
+      transcribeOn.style.top = "7%";
+      transcribeOn.style.borderRadius = "5px";
+      transcribeOn.setAttribute("id", "transcribeOnMessage");
+      console.log(transcribeOn);
+      document.body.appendChild(transcribeOn);
+    }
+
+    const removeTranscriptionMessage = () => {
+      console.log("removeTranscriptionMessage");
+      transcribeOn = document.getElementById('transcribeOnMessage');
+      document.body.removeChild(transcribeOn);
+    }
+
+
     // Caption Controls   
     // Turn Google's captions on
 
@@ -262,8 +330,8 @@ try {
         captionsButtonOn.click();
         weTurnedCaptionsOn = true;
       }
+      addTranscriptionMessage();
     }
-
 
     // Turn Google's captions off
 
@@ -274,6 +342,7 @@ try {
         captionsButtonOff.click();
         weTurnedCaptionsOn = false;
       }
+      removeTranscriptionMessage();
     }
 
 
@@ -876,6 +945,8 @@ try {
     };
 
 
+    
+
     // Make a menu with primary actions and a list of transcripts
 
     const makeMenu = () => {
@@ -887,35 +958,15 @@ try {
       const meetPostApi = (transcriptId, transcriptContent) => {
         console.log("POST REQUEST API CALLED");
 
-        chrome.runtime.sendMessage({type: "post_meet", data: { 
-          id: transcriptId,
-          content: transcriptContent
-        }});
+        chrome.runtime.sendMessage({
+          type: "post_meet", data: {
+            id: transcriptId,
+            content: transcriptContent
+          }
+        });
 
-        // Create Notification For Saved Transcript
-        let meetSentNotification = document.createElement('div');
-        meetSentNotification.style.position = 'absolute';
-        meetSentNotification.style.top = '20px';
-        meetSentNotification.style.left = '20px';
-        meetSentNotification.style.zIndex = '10';
-        meetSentNotification.style.backgroundColor = 'mediumseagreen';
-        meetSentNotification.style.color = 'white';
-        meetSentNotification.style.padding = '10px';
-        meetSentNotification.style.borderRadius = '5px';
-        meetSentNotification.style.border = '2px solid white';
-        meetSentNotification.style.fontSize = 'large';
+        createFlashMessage('Meet Transcript Saved');
 
-        let sentMessage = document.createTextNode ('Meet Transcript Saved');
-        meetSentNotification.appendChild(sentMessage);
-        document.body.appendChild(meetSentNotification);
-
-        //console.log(meetSentNotification);
-
-        // Remove the notification after 3 sec
-        setTimeout(() => {
-          document.body.removeChild(meetSentNotification);
-        }, 3000);
-        
       }
 
       // TODO move
@@ -926,22 +977,32 @@ try {
 
         meetPostApi(currentTranscriptId, meetTextContent);
       };
-      const clearTranscript = () => deleteTranscript(currentTranscriptId);
+      const clearTranscript = () => {
+        deleteTranscript(currentTranscriptId);
+        console.log('Clear Transcript called');
+        createFlashMessage('Meet Transcript Cleared');
+      }
 
       [
         makeMenuOption(SVG_COPY, 10, 12, 'Generate Meet Transcipt', tryTo(copyTranscript, 'copying transcript')),
         makeMenuOption(SVG_RECYCLE, 12, 12, 'Clear Meet Transcipt', tryTo(clearTranscript, 'clearing transcript')),
-        makeMenuOption(SVG_SHREDDER, 12, 12, 'Delete all Transcipts', tryTo(deleteTranscripts, 'deleting all transcripts')),
+        //makeMenuOption(SVG_SHREDDER, 12, 12, 'Delete all Transcipts', tryTo(deleteTranscripts, 'deleting all transcripts')),
         // makeMenuOption(SVG_MUTE, 15, 12, 'Hide captions while recording', () => {}),
       ].forEach((el) => additionalOptions.appendChild(el));
 
+      setTimeout( () => {
+        createFlashMessage(welcomeMessage);
+      }, 2000);
+      
+
+      /*
       const list = makeTranscriptList();
 
       if (list.children.length > 0) {
         additionalOptions.appendChild(document.createElement('hr'));
         additionalOptions.appendChild(list);
       }
-
+      */
       return additionalOptions;
     };
 
