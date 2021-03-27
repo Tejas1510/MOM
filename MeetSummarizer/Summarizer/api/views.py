@@ -10,6 +10,29 @@ from rest_framework.views import APIView
 from .serializers import UserSerializer, UserSerializerWithToken
 from rest_framework import permissions, status
 from Summarizer.models import User
+from datetime import datetime
+from Summarizer.api.translateUtility import translate_utility
+
+def preProcessing(text):
+  sample=text.split('**')
+  sample.pop(0);
+  clean_text=""
+  print(sample)
+  i=0
+  for t in sample:
+    if i%2!=0:
+      clean_text+=str(t)
+    i+=1
+    
+  # Duration Calculation
+  startTime = datetime.strptime(sample[0].split()[0], '%H:%M')
+  endTime = datetime.strptime(sample[-2].split()[0], '%H:%M')
+  durationMinutes = (endTime - startTime).total_seconds() / 60
+  if durationMinutes < 0:
+    durationMinutes += 24*60
+  durationMinutes = round(durationMinutes)
+  
+  return {'clean_text': clean_text, 'duration': durationMinutes}
 
 
 @api_view(['GET'])
@@ -43,9 +66,11 @@ def getMeet(request):
 
 @api_view(['GET'])
 def apiOverview(request):
-    # Uncomment Below Code to Programatically create meet content data for testing
+    #Uncomment Below Code to Programatically create meet content data for testing
     # for i in range(1,16):
     #     newMeet = MeetContent(owner='tejas@gmail.com', hostname='Tejas', title='Tejas Meet ' + str(i), duration=str(i*10), transcript='Meet Transcript ' + str(i), summary='Meet Summary ' + str(i))
+    #     newMeet.save()
+    #     newMeet = MeetContent(owner='ak@gmail.com', hostname='Ayush', title='Ayush Meet ' + str(i), duration=str(i*10), transcript='Meet Transcript ' + str(i), summary='Meet Summary ' + str(i))
     #     newMeet.save()
     #     print("newMeet: ", str(newMeet))
     meets = MeetContent.objects.all()
@@ -54,8 +79,25 @@ def apiOverview(request):
 
 @api_view(['POST'])
 def createMeet(request):
-    serializer = MeetContentSerializer(data=request.data)
+    try:
+        receivedData = dict(request.data)
+        modifiedData = preProcessing(receivedData['transcript'])
+        receivedData['transcript'] = modifiedData['clean_text']
+        receivedData['duration'] = str(modifiedData['duration'])
+    except:
+        receivedData = dict(request.data)
+        
+    serializer = MeetContentSerializer(data=receivedData)
     if serializer.is_valid():
         serializer.save()
         print("Meet Saved in Database")
     return Response(serializer.data)
+
+
+@api_view(['POST'])
+def translateText(request):
+    input_text = str(request.data['input_text'])
+    inp_lang = str(request.data['inp_lang'])
+    op_lang = str(request.data['op_lang'])
+    op_text = translate_utility(input_text, inp_lang, op_lang)
+    return Response({'op_text': op_text})
