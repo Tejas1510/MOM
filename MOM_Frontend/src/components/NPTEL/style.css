@@ -1,0 +1,40 @@
+.nptel{
+    width: 100%;
+    margin: auto;
+    padding: 0 30px 20px 30px;
+    text-align: center;
+    margin-top: 71px;
+    box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.5);
+}
+h1{
+font-size: 34px;
+color: white;
+font-weight: bold;
+font-family: 'Montserrat', serif;
+}
+
+p{
+line-height: 150%;
+padding: 0 0 10px;
+}
+.nptelHead{
+text-align: center;
+justify-content: center;
+margin-top: 30px;
+}
+.nptelPara{
+color:white;
+font-size: 25px;
+
+}
+
+#form10{
+    font-size: 20px;
+    border: 2px solid blue;
+    box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.5);
+
+}
+
+.form-check-label{
+    font-size: 18px;
+}

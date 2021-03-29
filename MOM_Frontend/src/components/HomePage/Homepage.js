@@ -10,6 +10,7 @@ import FeatureZoom from '../../assets/img/featureZoom.png'
 import FeatureImage2 from '../../assets/img/featureImage2.svg'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import DescriptionIcon from '@material-ui/icons/Description';
 import Step1 from '../../assets/img/step1.png'
 import Step2 from '../../assets/img/step2.svg'
 import Step3 from '../../assets/img/step3.svg'
@@ -20,7 +21,8 @@ import Ayush from '../../assets/img/ayush.jpg'
 import YashTelkhade from '../../assets/img/yashtelkhade.jpg'
 import YashAgrawal from '../../assets/img/yashAgrawal.jpeg'
 import Atul from '../../assets/img/atul.jpg'
-
+import NPTEL from '../../assets/img/nptel.png'
+import {NavLink} from 'react-router-dom'
 function Homepage() {
     return (
         <div>
@@ -195,7 +197,13 @@ function Homepage() {
                   </div>
                </div>
             </div>
+              <div className="roundButton bg-primary">
+                  <NavLink to="/nptel"><h3 style={{color:'white',textAlign:'center',paddingTop:'20px',fontWeight:'bold',fontSize:'30px'}}><DescriptionIcon style={{fontSize:'40px'}}></DescriptionIcon></h3></NavLink>
+              </div>
+              {/* <a className="bottomButton"><img className="img-fluid mainlogo m-auto" width="80" height="80" src={NPTEL}></img></a> */}
+            
           </section>
+
         <main id="main">
     
         {/* Team Section Ends */}

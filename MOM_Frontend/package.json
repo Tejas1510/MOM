@@ -20,7 +20,8 @@
     "react-reveal": "^1.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-to-pdf": "0.0.13"
+    "react-to-pdf": "0.0.13",
+    "react-tooltip": "^4.2.17"
   },
   "scripts": {
     "start": "react-scripts start",

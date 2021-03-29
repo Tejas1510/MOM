@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Dashboard from './components/Dashboard/Dashboard';
 import Footer1 from './components/Footer/Footer1';
+import Nptel from './components/NPTEL/Nptel';
 
 function App() {
   // DECLARE LOGIN STATE FOR APP
@@ -43,6 +44,12 @@ function App() {
         <Route exact path ="/contactus">
             <Navbar userState={state} manageState={setState}/>
             <Contactus/>
+            <br/>
+            <Footer/>
+        </Route>
+        <Route exact path ="/nptel">
+            <Navbar userState={state} manageState={setState}/>
+            <Nptel/>
             <br/>
             <Footer/>
         </Route>
