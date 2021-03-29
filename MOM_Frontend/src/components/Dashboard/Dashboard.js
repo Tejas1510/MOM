@@ -8,7 +8,8 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            meetList: []
+            meetList: [],
+            loaded: false
         }
     }
 
@@ -47,7 +48,7 @@ class Dashboard extends Component {
                                         dashboardContent.push(element);
                                     });
                                     //console.log("dashboardContent", dashboardContent);
-                                    this.setState({ meetList: dashboardContent });
+                                    this.setState({ meetList: dashboardContent, loaded: true});
                                     return (dashboardContent);
                                 });
                         }
@@ -91,7 +92,7 @@ class Dashboard extends Component {
         const logged_in_dashboard = (
             <div>
                 <Sidebar logoutHandler={this.logoutHandler} user={this.props.userState.email} name={this.props.userState.name} meetL={this.state.meetList}>
-                    <LoadingIndicator color="#000000" />
+                    {!this.state.loaded ? <LoadingIndicator color="#000000" /> : null}
                 </Sidebar>
             </div>)
 

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import apiOverview, getMeet, createMeet
+from .views import apiOverview, getMeet, createMeet, translateText
 from .views import current_user, UserList
 
 urlpatterns = [
@@ -8,4 +8,5 @@ urlpatterns = [
     path('apiOverview',apiOverview),
     path('createMeet', createMeet),
     path('getMeet', getMeet),
+    path('translateText', translateText),
 ]
