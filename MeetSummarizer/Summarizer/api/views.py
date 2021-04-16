@@ -12,6 +12,9 @@ from rest_framework import permissions, status
 from Summarizer.models import User
 from datetime import datetime
 from Summarizer.api.translateUtility import translate_utility
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import AllowAny
+from Summarizer.api.t5_model import main_t5
 
 def preProcessing(text):
   sample=text.split('**')
@@ -93,7 +96,7 @@ def createMeet(request):
         print("Meet Saved in Database")
     return Response(serializer.data)
 
-
+@permission_classes([AllowAny])
 @api_view(['POST'])
 def translateText(request):
     input_text = str(request.data['input_text'])
@@ -101,3 +104,14 @@ def translateText(request):
     op_lang = str(request.data['op_lang'])
     op_text = translate_utility(input_text, inp_lang, op_lang)
     return Response({'op_text': op_text})
+
+@permission_classes([AllowAny])
+@api_view(['POST'])
+def t5Summarizer(request):
+    try:
+        input_text = str(request.data['input_text'])
+        op_text = main_t5(input_text)
+        return Response({'op_text': op_text})
+    except Exception as e:
+        return Response({'op_text': str(e)})
+    

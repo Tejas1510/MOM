@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -116,14 +116,16 @@ const speechStyle = {
 
 
 function MyModal(props) {
-  const [state, setState] = useState({ lang: 'English', text: props.transcript });
+  const [state, setState] = useState({ lang: 'English', text: props.transcript, model: 'NLTK Model', summaryText: '', translatedSummary: '' });
+  //const TransAPI = 'https://meetdigest.herokuapp.com/api/translateText';
+  const TransAPI = 'http://localhost:8000/api/translateText';
 
   const getTranslation = (inp_text, src_lang, dest_lang) => {
     console.log('getTranslation called');
     let token = localStorage.getItem('token');
     if (token) {
       trackPromise(
-        fetch('https://meetdigest.herokuapp.com/api/translateText', {
+        fetch(TransAPI, {
           method: 'POST',
           headers: {
             'Content-Type': "application/json",
@@ -134,7 +136,23 @@ function MyModal(props) {
           .then(res => res.json())
           .then(req2 => {
             console.log("translateText response ", req2);
-            setState({ lang: dest_lang, text: req2.op_text });
+
+            fetch(TransAPI, {
+              method: 'POST',
+              headers: {
+                'Content-Type': "application/json",
+                Authorization: `JWT ${token}`
+              },
+              body: JSON.stringify({ input_text: state.summaryText, inp_lang: 'English', op_lang: dest_lang })
+            })
+              .then(inres => inres.json())
+              .then(inreq2 => {
+                console.log("translateText response ", inreq2);
+                let transSummary = inreq2.op_text;
+                setState({ ...state, lang: dest_lang, text: req2.op_text, translatedSummary: transSummary });
+              })
+
+            //setState({ ...state, lang: dest_lang, text: req2.op_text });
           })
       );
     }
@@ -143,6 +161,66 @@ function MyModal(props) {
     console.log("langChangeHandler", e.target.value);
     getTranslation(props.transcript, 'English', e.target.value);
   }
+
+
+  const getSummary = (model_name) => {
+    console.log("getSummary model=", model_name);
+    const model1API = 'https://meetdigest.herokuapp.com/api/nltkSummarizer';
+    //const model2API = 'https://meetdigest.herokuapp.com/api/t5Summarizer';
+    const model2API = 'http://localhost:8000/api/t5Summarizer';
+    let APIURL;
+    if (model_name === 'NLTK Model')
+      APIURL = model1API;
+    else if (model_name === 'T5 Model')
+      APIURL = model1API;
+
+    let token = localStorage.getItem('token');
+    if (token) {
+      trackPromise(
+        fetch(APIURL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': "application/json",
+            Authorization: `JWT ${token}`
+          },
+          body: JSON.stringify({ input_text: props.transcript })
+        })
+          .then(res => res.json())
+          .then(req2 => {
+            console.log("summaryText response ", req2);
+            console.log('model_name=', model_name);
+            let summary = req2.op_text;
+
+            fetch(TransAPI, {
+              method: 'POST',
+              headers: {
+                'Content-Type': "application/json",
+                Authorization: `JWT ${token}`
+              },
+              body: JSON.stringify({ input_text: summary, inp_lang: 'English', op_lang: state.lang })
+            })
+              .then(inres => inres.json())
+              .then(inreq2 => {
+                console.log("translateText response ", inreq2);
+                let transSummary = inreq2.op_text;
+                setState({ ...state, summaryText: summary, model: model_name, translatedSummary: transSummary });
+              })
+
+            //setState({ ...state, summaryText: summary, model: model_name });
+          })
+      );
+    }
+  }
+  const modelChangeHandler = (e) => {
+    console.log("modelChangeHandler", e.target.value);
+    getSummary(e.target.value);
+  }
+
+  useEffect(() => {
+    getSummary('NLTK Model');
+    return () => {
+    }
+  }, [])
 
   const { promiseInProgress } = usePromiseTracker();
 
@@ -205,14 +283,40 @@ function MyModal(props) {
 
         {!promiseInProgress ?
           <p ref={ref}>
-            <div style={{marginBottom: '20px'}}>
+            <div style={{ marginBottom: '20px' }}>
               Play Transcript: <Speech text={props.transcript} styles={speechStyle} stop={true} pause={true} resume={true} />
             </div>
-            <div style={{marginBottom: '20px'}}>
+            <div style={{ marginBottom: '20px' }}>
               Tarnscript: &nbsp; {state.text}
             </div>
-            <div style={{marginBottom: '20px'}}>
-              Summary: &nbsp; {props.summary}
+            <div style={{ marginBottom: '20px' }}>
+              <div className="row">
+                <div className="col-4 col-md-7">
+                  Summary:
+              </div>
+                <div className="col-8 col-md-5">
+                  <div className="row">
+                    <div className="col-3">
+                      Model
+                    </div>
+                    <div className="col-9">
+                      <Form>
+                        <Form.Control as="select" size="sm" onChange={modelChangeHandler} value={state.model}>
+                          <option>NLTK Model</option>
+                          <option>T5 Model</option>
+                        </Form.Control>
+                      </Form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-11 mt-3">
+                  {state.translatedSummary}
+                </div>
+              </div>
+
             </div>
           </p>
           : null}
