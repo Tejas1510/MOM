@@ -105,6 +105,15 @@ def translateText(request):
     op_text = translate_utility(input_text, inp_lang, op_lang)
     return Response({'op_text': op_text})
 
+
+@permission_classes([AllowAny])
+@api_view(['POST'])
+def nltkSummarizer(request):
+    input_text = str(request.data['input_text'])
+    op_text = main_nltk(input_text)
+    return Response({'op_text': op_text})
+
+
 @permission_classes([AllowAny])
 @api_view(['POST'])
 def t5Summarizer(request):

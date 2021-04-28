@@ -172,7 +172,7 @@ function MyModal(props) {
     if (model_name === 'NLTK Model')
       APIURL = model1API;
     else if (model_name === 'T5 Model')
-      APIURL = model1API;
+      APIURL = model2API;
 
     let token = localStorage.getItem('token');
     if (token) {
