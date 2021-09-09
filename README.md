@@ -1,4 +1,4 @@
-<img src = "https://github.com/Tejas1510/MOM/blob/main/Images_MOM/MOM.png"></img>
+![](https://socialify.git.ci/Tejas1510/MOM/image?description=1&language=1&owner=1&stargazers=1&theme=Dark)
  
 ## 📌 Introduction
 
@@ -11,6 +11,8 @@
 the topic and breaks the language barrier
 
 ## Methodology:
+
+<center><img src = "https://github.com/Tejas1510/MOM/blob/main/Images_MOM/flowchart.PNG"></img></center>
 
 Step 1: Convert meeting to a textual format, using Speech Recognition
 
@@ -25,16 +27,6 @@ impaired people.
 
 Step 5: So our app will have 4 layering’s and will solve all the suggestions provided.
 
-## Technology:
-
-• Frontend: React JS, Material UI, JavaScript, HTML, CSS
-
-• Backend: Django ( Python Framework)
-
-• Database: SQLite
-
-• Other Technologies: Machine Learning, NLTK Library
-
 ## Functional Specifications:
 
 • Transcription of Meeting: Convert meeting into textual format
@@ -48,18 +40,19 @@ visually challenged people.
 
 • Email Notifications: Send mail to the user with his/her MOM
 
+## Technology:
+
+• Frontend: React JS, Material UI, JavaScript, HTML, CSS
+
+• Backend: Django ( Python Framework)
+
+• Database: SQLite
+
+• Other Technologies: Machine Learning, NLTK Library
 
 # Project Directory Structure
 
-1. MeetSummarizer: Project Name
-2. Summarizer: Django app ( for Summarization purpose)
-3. MOM_Frontend: React App(Frontend)
+1. MOM_Frontend: React App(Frontend)
+2. MeetSummarizer: Django Backend and NLP code
+3. Chrome Extension: Chrome Extension code
 
-## Our Team
-| S.No. | Name                      | Role                      | GitHub Username                                      |
-| ----- | --------------------------| ------------------------- | ---------------------------------------------------- |
-| 1.    | Yash Agrawal              | Frontend Developer        |                                                      |
-| 2.    | Tejas Sudhir Tapas        | Frontend Developer               |                                                      |
-| 3.    | Atul Thakre               | Backend Developer         |                                                      |
-| 4.    | Yash Telkhade             | Chrome Extension Part & Testing |                                                      |
-| 5.    | Ayush Kedia               | Chrome Extension Part & Testing  |                                                      |
